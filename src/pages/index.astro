@@ -6,26 +6,21 @@ import AZVisionLogoImage from '../../public/azvision-logo.png';
 
 <Layout title="AZ Vision">
 	<main>
-		<Image src={AZVisionLogoImage} alt="A bird sitting on a nest of eggs."/>
+		<Image src={AZVisionLogoImage} alt="AZ Vision logo" />
 		<p class="instructions">
-			Vytváříme systémy pro detekci objektů přesně podle Vašich požadavků. Spektrum použití je široké. Kromě
-			jednoduchého počítání objektů je možné „natrénovat“ i na odlišení různých typů objektů v obrazu.
-			Například rozpoznávání cyklistů a běžců na cyklostezce či počítání mandarinek na pásu.
-			<br/>
-			<br/>
+			Navrhujeme a vytváříme systémy pro detekci objektů na míru Vašim specifickým potřebám. 
+			Naše řešení nacházejí široké uplatnění: od základního počítání objektů až po pokročilé 
+			rozpoznávání různých typů objektů v obrazu. Naše technologie například umožňuje rozlišovat 
+			cyklisty a běžce na cyklostezkách či počítat mandarinky na výrobní lince.
+		</p>
+		<p class="instructions">
 			Systém je vždy ušitý na míru zákazníkovi, takže je možné ho integrovat s jeho stávající infrastrukturou, nebo může
 			fungovat zcela nezávisle.
 		</p>
-		<p>
-			<div>
-				Zajímá Vás to? Napište!
-			</div>
-			<div>
-				info@azvision.cz
-			</div>
+		<p class="contact">
+			<div>Zajímá Vás to? Napište!</div>
+			<div><a href="mailto:info@azvision.cz">info@azvision.cz</a></div>
 		</p>
-
-
 	</main>
 </Layout>
 
@@ -36,26 +31,9 @@ import AZVisionLogoImage from '../../public/azvision-logo.png';
 		width: 800px;
 		max-width: calc(100% - 2rem);
 		color: white;
-		font-size: 20px;
+		font-size: 18px;
 		line-height: 1.6;
 	}
-	.astro-a {
-		position: absolute;
-		top: -32px;
-		left: 50%;
-		transform: translatex(-50%);
-		width: 220px;
-		height: auto;
-		z-index: -1;
-	}
-	h1 {
-		font-size: 4rem;
-		font-weight: 700;
-		line-height: 1;
-		text-align: center;
-		margin-bottom: 1em;
-	}
-	
 	.instructions {
 		margin-bottom: 2rem;
 		border: 1px solid rgba(var(--accent-light), 25%);
@@ -63,5 +41,15 @@ import AZVisionLogoImage from '../../public/azvision-logo.png';
 		padding: 1.5rem;
 		border-radius: 8px;
 	}
-	
+	.contact {
+		margin-top: 1.5rem;
+		font-size: 18px;
+	}
+	.contact a {
+		color: var(--accent-light);
+		text-decoration: none;
+	}
+	.contact a:hover {
+		text-decoration: underline;
+	}
 </style>
