@@ -1,55 +1,25 @@
 ---
-import { Image } from 'astro:assets';
 import Layout from '../layouts/Layout.astro';
-import AZVisionLogoImage from '../../public/azvision-logo.png';
+import HeroSection from '../components/HeroSection.astro';
+import ProductOverview from '../components/ProductOverview.astro';
+import Features from '../components/Features.astro';
+import ImplementationSteps from '../components/ImplementationSteps.astro';
+import ContactSection from '../components/ContactSection.astro';
+import References from '../components/References.astro';
 ---
+<link rel="stylesheet" href="/src/styles/styles.css">
 
-<Layout title="AZ Vision">
-	<main>
-		<Image src={AZVisionLogoImage} alt="AZ Vision logo" />
-		<p class="instructions">
-			Navrhujeme a vytváříme systémy pro detekci objektů na míru Vašim specifickým potřebám. 
-			Naše řešení nacházejí široké uplatnění: od základního počítání objektů až po pokročilé 
-			rozpoznávání různých typů objektů v obrazu. Naše technologie například umožňuje rozlišovat 
-			cyklisty a běžce na cyklostezkách či počítat mandarinky na výrobní lince.
-		</p>
-		<p class="instructions">
-			Systém je vždy ušitý na míru zákazníkovi, takže je možné ho integrovat s jeho stávající infrastrukturou, nebo může
-			fungovat zcela nezávisle.
-		</p>
-		<p class="contact">
-			<div>Zajímá Vás to? Napište!</div>
-			<div><a href="mailto:info@azvision.cz">info@azvision.cz</a></div>
-		</p>
-	</main>
+<Layout 
+  title="AZ Vision | Přesné počítání návštěvníků pro retail"
+  description="Zvyšte efektivitu vaší prodejny díky AI analýze návštěvnosti. Nabízíme přesné počítání osob, cloudový portál a snadnou integraci. Řešení na míru."
+>
+  <main>
+  <HeroSection />
+  <ProductOverview />
+  <Features />
+  <ImplementationSteps />
+  <References />
+  <ContactSection />
+</main>
 </Layout>
 
-<style>
-	main {
-		margin: auto;
-		padding: 1rem;
-		width: 800px;
-		max-width: calc(100% - 2rem);
-		color: white;
-		font-size: 18px;
-		line-height: 1.6;
-	}
-	.instructions {
-		margin-bottom: 2rem;
-		border: 1px solid rgba(var(--accent-light), 25%);
-		background: linear-gradient(rgba(var(--accent-dark), 66%), rgba(var(--accent-dark), 33%));
-		padding: 1.5rem;
-		border-radius: 8px;
-	}
-	.contact {
-		margin-top: 1.5rem;
-		font-size: 18px;
-	}
-	.contact a {
-		color: var(--accent-light);
-		text-decoration: none;
-	}
-	.contact a:hover {
-		text-decoration: underline;
-	}
-</style>
