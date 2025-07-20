@@ -38,6 +38,7 @@ code {
 
 h1, h2 {
   color: rgb(var(--accent-blue));
+  text-align: center;
 }
 
 /* ===== UTILITY CLASSES ===== */
