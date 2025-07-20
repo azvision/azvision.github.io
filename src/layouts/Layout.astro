@@ -51,6 +51,15 @@ import '../styles/styles.css';
 		<meta property="og:locale" content="cs_CZ" />
 		<meta property="og:site_name" content="AZ Vision" />
 		
+		<!-- Google tag (gtag.js) -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZMEEK6ZSKG"></script>
+		<script is:inline>
+			window.dataLayer = window.dataLayer || [];
+			function gtag(){dataLayer.push(arguments);}
+			gtag('js', new Date());
+			gtag('config', 'G-ZMEEK6ZSKG');
+		</script>
+		
 		<!-- Generator -->
 		<meta name="generator" content={Astro.generator} />
 		
