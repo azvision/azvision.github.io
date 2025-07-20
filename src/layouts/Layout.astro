@@ -2,51 +2,80 @@
 interface Props {
 	title: string;
 	description: string;
+	keywords?: string;
+	canonicalUrl?: string;
+	ogImage?: string;
 }
 
-const { title, description } = Astro.props;
+const { 
+	title, 
+	description, 
+	keywords = "počítání návštěvníků, AI analýza, retail, prodejny, návštěvnost, AZ Vision",
+	canonicalUrl = Astro.url.href,
+	ogImage = "/og-image.jpg"
+} = Astro.props;
+
 import '../styles/styles.css';
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="cs">
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="description" content={description} />
-		<meta name="viewport" content="width=device-width" />
+		<meta name="keywords" content={keywords} />
+		<meta name="author" content="AZ Vision" />
+		<meta name="robots" content="index, follow" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta name="theme-color" content="#e54b4b" />
+		
+		<!-- Canonical URL -->
+		<link rel="canonical" href={canonicalUrl} />
+		
+		<!-- Favicon -->
 		<link rel="icon" type="image/x-icon" href="/favicon.ico" />
+		
+		<!-- Preconnect for performance -->
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		
+		<!-- Preload critical CSS -->
+		<link rel="preload" href="/src/styles/styles.css" as="style" />
+		
+		<!-- Open Graph tags -->
+		<meta property="og:title" content={title} />
+		<meta property="og:description" content={description} />
+		<meta property="og:type" content="website" />
+		<meta property="og:url" content={canonicalUrl} />
+		<meta property="og:image" content={ogImage} />
+		<meta property="og:locale" content="cs_CZ" />
+		<meta property="og:site_name" content="AZ Vision" />
+		
+		<!-- Generator -->
 		<meta name="generator" content={Astro.generator} />
+		
+		<!-- Structured Data -->
+		<script type="application/ld+json">
+			{
+				"@context": "https://schema.org",
+				"@type": "Organization",
+				"name": "AZ Vision",
+				"description": "AZ Vision Footfall System - pokročilý systém pro analýzu návštěvnosti pomocí AI kamer. Nabízíme přesné počítání osob, cloudový portál pro správu více poboček a snadnou integraci s existující infrastrukturou.",
+				"url": "https://azvision.github.io",
+				"logo": "https://azvision.github.io/logo_light.png",
+				"contactPoint": {
+					"@type": "ContactPoint",
+					"contactType": "sales",
+					"availableLanguage": "Czech"
+				},
+				"areaServed": "CZ",
+				"serviceType": "AI Analytics for Retail"
+			}
+		</script>
+		
 		<title>{title}</title>
 	</head>
 	<body>
 		<slot />
 	</body>
 </html>
-<style is:global>
-	:root {
-		--accent-red: 229, 75, 75; /* Crimson Red */
-		--accent-blue: 169, 214, 229; /* Sky Blue */
-		--accent-dark: 35, 38, 46; /* Charcoal */
-		--accent-gradient: linear-gradient(
-			45deg,
-			rgb(var(--accent-red)),
-			rgb(var(--accent-blue)) 80%
-		);
-	}
-	html {
-		font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-		background: rgb(var(--accent-dark));
-		background-size: 224px;
-	}
-	code {
-		font-family:
-			Menlo,
-			Monaco,
-			Lucida Console,
-			Liberation Mono,
-			DejaVu Sans Mono,
-			Bitstream Vera Sans Mono,
-			Courier New,
-			monospace;
-	}
-</style>

@@ -1,5 +1,5 @@
 ---
-// No props needed for now
+import { Image } from 'astro:assets';
 ---
 <section class="product-overview">
   <h2>O produktu</h2>
@@ -27,31 +27,7 @@
       </ul>
     </div>
     <div class="overview-image-content">
-      <img src="/camera_detail.jpg" alt="Detail AI kamery pro počítání osob" class="camera-image" />
+      <Image src="/camera_detail.jpg" alt="Detail AI kamery pro počítání osob" class="camera-image" width={234} height={245} />
     </div>
   </div>
 </section>
-
-<style>
-  .overview-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 2rem;
-    align-items: center;
-    margin-top: 2rem;
-  }
-
-  @media (min-width: 768px) {
-    .overview-grid {
-      grid-template-columns: 2fr 1fr;
-      gap: 3rem;
-    }
-  }
-
-  .camera-image {
-    width: 100%;
-    border-radius: 12px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-    border: 1px solid rgba(255,255,255,0.1);
-  }
-</style>
