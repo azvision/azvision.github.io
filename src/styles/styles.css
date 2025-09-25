@@ -32,6 +32,33 @@ html {
   background: rgb(var(--accent-dark));
 }
 
+/* Language switcher styles */
+.language-switcher {
+  padding: 0.6rem 1rem;
+}
+.language-switcher a {
+  color: rgb(var(--accent-blue));
+  text-decoration: underline;
+  font-weight: 600;
+  transition: color var(--transition-fast), opacity var(--transition-fast);
+}
+.language-switcher a:hover,
+.language-switcher a:focus {
+  color: rgb(var(--accent-red));
+  opacity: 0.95;
+  outline: none;
+}
+
+/* Active (non-linked) language styling */
+.language-switcher span[aria-current="true"],
+.language-switcher .active {
+  color: rgb(var(--accent-blue));
+  text-decoration: none;
+  background: rgba(255,255,255,0.04);
+  padding: 0.18rem 0.5rem;
+  border-radius: 6px;
+}
+
 code {
   font-family: 'Monaco', 'Menlo', 'Courier New', monospace;
 }

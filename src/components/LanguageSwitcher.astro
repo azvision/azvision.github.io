@@ -1,0 +1,17 @@
+---
+interface Props { current?: string }
+const { current = 'cs' } = Astro.props as Props;
+---
+
+<nav class="language-switcher" style="margin: 1rem 0;">
+  <!-- English first -->
+  {current === 'en' ? (
+    <>
+      <span aria-current="true" style="font-weight:700;">English</span> | <a href="/">Čeština</a>
+    </>
+  ) : (
+    <>
+      <a href="/en/">English</a> | <span aria-current="true" style="font-weight:700;">Čeština</span>
+    </>
+  )}
+</nav>

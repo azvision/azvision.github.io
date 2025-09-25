@@ -1,12 +1,16 @@
 ---
 import { Image } from 'astro:assets';
+interface Props { lang?: string }
+const { lang = 'cs' } = Astro.props as Props;
 ---
 <section class="product-overview">
-  <h2>O řešení pro analýzu návštěvnosti</h2>
+  <h2>{lang === 'en' ? 'About our visitor analytics solution' : 'O řešení pro analýzu návštěvnosti'}</h2>
   <div class="overview-grid">
     <div class="overview-text-content">
       <p class="overview-text">
-        AZ Vision Footfall System je pokročilý systém pro analýzu počtu osob, které navštívily prodejní prostor. Je optimalizovaný pro správu a analýzu dat z více poboček společnosti. Nabízí přesné počítání návštěvníků, vizualizaci dat a snadnou integraci s Vaší stávající infrastrukturou.
+        {lang === 'en'
+          ? 'AZ Vision Footfall System is an advanced solution for analyzing the number of people visiting retail spaces. It is optimized for managing and analyzing data across multiple locations. It provides accurate people counting, data visualization and easy integration with your existing infrastructure.'
+          : 'AZ Vision Footfall System je pokročilý systém pro analýzu počtu osob, které navštívily prodejní prostor. Je optimalizovaný pro správu a analýzu dat z více poboček společnosti. Nabízí přesné počítání návštěvníků, vizualizaci dat a snadnou integraci s Vaší stávající infrastrukturou.'}
       </p>
       <div class="system-desc-lead">Zákazníci získávají:</div>
       <ul class="system-desc-list">
@@ -15,14 +19,14 @@ import { Image } from 'astro:assets';
             <!-- Lock SVG -->
             <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
           </span>
-          AI kamery pro počítání návštěvníků
+          {lang === 'en' ? 'AI cameras for people counting' : 'AI kamery pro počítání návštěvníků'}
         </li>
         <li>
           <span class="desc-icon">
             <!-- Camera SVG -->
             <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="18" height="13" rx="2"/><circle cx="12" cy="13.5" r="3"/><path d="M8 7V5a4 4 0 0 1 8 0v2"/></svg>
           </span>
-          Portál AZ Vision pro analýzu a správu
+          {lang === 'en' ? 'AZ Vision portal for analytics and management' : 'Portál AZ Vision pro analýzu a správu'}
         </li>
       </ul>
     </div>

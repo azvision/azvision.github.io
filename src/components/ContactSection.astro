@@ -1,31 +1,32 @@
 ---
-// No props needed for now
+interface Props { lang?: string }
+const { lang = 'cs' } = Astro.props as Props;
 ---
 <section class="contact">
-  <h2>Kontakt pro AI řešení návštěvnosti</h2>
+  <h2>{lang === 'en' ? 'Contact for AI visitor analytics' : 'Kontakt pro AI řešení návštěvnosti'}</h2>
   <p class="contact-email"><a href="mailto:info@azvision.cz">info@azvision.cz</a></p>
   <p class="contact-phone"><a href="tel:+420725398765">+420 725 398 765</a></p>
-  <p>Máte zájem o řešení, cenovou nabídku nebo potřebujete více informací?</p>
+  <p>{lang === 'en' ? "Interested in a solution, a quote or need more information?" : 'Máte zájem o řešení, cenovou nabídku nebo potřebujete více informací?'}</p>
   <form
     action="https://formspree.io/f/xblklkvy"
     method="POST"
   >
     <label>
-      Váš e-mail:
+      {lang === 'en' ? 'Your email:' : 'Váš e-mail:'}
       <input type="email" name="email">
     </label>
     <label>
-      Telefon:
+      {lang === 'en' ? 'Phone:' : 'Telefon:'}
       <input type="tel" name="phone">
     </label>
     <label>
-      Společnost:
+      {lang === 'en' ? 'Company:' : 'Společnost:'}
       <input type="text" name="company">
     </label>
     <label>
-      Vaše představa o řešení:
+      {lang === 'en' ? 'Your idea about the solution:' : 'Vaše představa o řešení:'}
       <textarea name="message"></textarea>
     </label>
-    <button type="submit" class="contact-btn">Odeslat</button>
+    <button type="submit" class="contact-btn">{lang === 'en' ? 'Send' : 'Odeslat'}</button>
   </form>
 </section>

@@ -1,25 +1,32 @@
 ---
+
 interface Props {
 	title: string;
 	description: string;
 	keywords?: string;
 	canonicalUrl?: string;
 	ogImage?: string;
+	lang?: string;
+	ogLocale?: string;
 }
 
-const { 
-	title, 
-	description, 
+
+const {
+	title,
+	description,
 	keywords = "počítání návštěvníků, AI analýza, retail, prodejny, návštěvnost, AZ Vision",
 	canonicalUrl = Astro.url.href,
-	ogImage = "/og-image.jpg"
+	ogImage = "/og-image.jpg",
+	lang = "cs",
+	ogLocale = "cs_CZ"
 } = Astro.props;
 
 import '../styles/styles.css';
+import LanguageSwitcher from '../components/LanguageSwitcher.astro';
 ---
 
 <!doctype html>
-<html lang="cs">
+<html lang={lang}>
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="description" content={description} />
@@ -48,7 +55,7 @@ import '../styles/styles.css';
 		<meta property="og:type" content="website" />
 		<meta property="og:url" content={canonicalUrl} />
 		<meta property="og:image" content={ogImage} />
-		<meta property="og:locale" content="cs_CZ" />
+		<meta property="og:locale" content={ogLocale} />
 		<meta property="og:site_name" content="AZ Vision" />
 		
 		<!-- Google tag (gtag.js) -->
@@ -64,27 +71,28 @@ import '../styles/styles.css';
 		<meta name="generator" content={Astro.generator} />
 		
 		<!-- Structured Data -->
-		<script type="application/ld+json">
-			{
-				"@context": "https://schema.org",
-				"@type": "Organization",
-				"name": "AZ Vision",
-				"description": "AZ Vision Footfall System - pokročilý systém pro analýzu návštěvnosti pomocí AI kamer. Nabízíme přesné počítání osob, cloudový portál pro správu více poboček a snadnou integraci s existující infrastrukturou.",
-				"url": "https://azvision.github.io",
-				"logo": "https://azvision.github.io/logo_light.png",
-				"contactPoint": {
-					"@type": "ContactPoint",
-					"contactType": "sales",
-					"availableLanguage": "Czech"
-				},
-				"areaServed": "CZ",
-				"serviceType": "AI Analytics for Retail"
-			}
-		</script>
+			<script type="application/ld+json">
+				{
+					"@context": "https://schema.org",
+					"@type": "Organization",
+					"name": "AZ Vision",
+					"description": description,
+					"url": canonicalUrl,
+					"logo": ogImage,
+					"contactPoint": {
+						"@type": "ContactPoint",
+						"contactType": "sales",
+						"availableLanguage": lang === "cs" ? "Czech" : "English"
+					},
+					"areaServed": lang === "cs" ? "CZ" : "EN",
+					"serviceType": "AI Analytics for Retail"
+				}
+			</script>
 		
 		<title>{title}</title>
 	</head>
 	<body>
+			<LanguageSwitcher current={lang} />
 		<slot />
 	</body>
-</html>
+	</html>

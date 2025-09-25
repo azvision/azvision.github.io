@@ -1,9 +1,11 @@
 ---
 import { Image } from 'astro:assets';
+interface Props { lang?: string }
+const { lang = 'cs' } = Astro.props as Props;
 ---
 
 <section class="references">
-  <h2>Reference a spokojení klienti</h2>
+  <h2>{lang === 'en' ? 'References and satisfied clients' : 'Reference a spokojení klienti'}</h2>
   <div class="logo-grid">
     <div class="logo-item">
       <a href="https://winshop.cz/en" target="_blank" rel="noopener noreferrer">
@@ -16,7 +18,7 @@ import { Image } from 'astro:assets';
         />
       </a>
       <p style="margin-top: 1rem; font-size: 0.9rem; color: #c5c9d3; max-width: 250px; line-height: 1.5;">
-        Firma WinShop, tvůrce pokladního systému, nabízí AZ Footfall svým zákazníkům.
+        {Astro.props.lang === 'en' ? 'WinShop, a POS system vendor, offers AZ Footfall to their customers.' : 'Firma WinShop, tvůrce pokladního systému, nabízí AZ Footfall svým zákazníkům.'}
       </p>
     </div>
     <div class="logo-item">
@@ -29,8 +31,7 @@ import { Image } from 'astro:assets';
           style="height: 60px; filter: invert(1) brightness(1.5);"
         />
       </a>
-      <p style="margin-top: 1rem; font-size: 0.9rem; color: #c5c9d3; max-width: 250px; line-height: 1.5;">
-        Pro <strong>Marks and Spencer Česká republika</strong> byla vytvořena implementace systému na míru.
+      <p style="margin-top: 1rem; font-size: 0.9rem; color: #c5c9d3; max-width: 250px; line-height: 1.5;" set:html={lang === 'en' ? 'A custom implementation of the system was created for <strong>Marks and Spencer Czech Republic</strong>.' : 'Pro <strong>Marks and Spencer Česká republika</strong> byla vytvořena implementace systému na míru.'}>
       </p>
     </div>
   </div>
