@@ -4,9 +4,26 @@ const { lang = 'cs' } = Astro.props as Props;
 ---
 <section class="contact">
   <h2>{lang === 'en' ? 'Contact for AI visitor analytics' : 'Kontakt pro AI řešení návštěvnosti'}</h2>
-  <p class="contact-email"><a href="mailto:info@azvision.cz">info@azvision.cz</a></p>
-  <p class="contact-phone"><a href="tel:+420725398765">+420 725 398 765</a></p>
-  <p>{lang === 'en' ? "Interested in a solution, a quote or need more information?" : 'Máte zájem o řešení, cenovou nabídku nebo potřebujete více informací?'}</p>
+  
+  <div class="company-info">
+    {lang === 'en' ? (
+      <>
+        <p><strong>AZ Vision</strong> — a Czech company based in Prague</p>
+        <p>We are developers specializing in neural networks and computer vision. We&apos;re happy to meet in person to discuss your needs at your site or at our offices near Arkády Pankrác.</p>
+      </>
+    ) : (
+      <>
+        <p><strong>AZ Vision</strong> - česká firma se sídlem v Praze</p>
+        <p>Jsme vývojáři specializující se na práci s neuronovými sítěmi a počítačovým viděním. Rádi se s vámi setkáme osobně a probereme vaše potřeby přímo u vás nebo v našich prostorách u Arkád Pankrác.</p>
+      </>
+    )}
+  </div>
+  
+  <div class="contact-details">
+    <p class="contact-email"><a href="mailto:info@azvision.cz">info@azvision.cz</a></p>
+    <p class="contact-phone"><a href="tel:+420725398765">+420 725 398 765</a></p>
+    <p>{lang === 'en' ? "Interested in a solution, a quote or need more information?" : 'Máte zájem o řešení, cenovou nabídku nebo potřebujete více informací?'}</p>
+  </div>
   <form
     action="https://formspree.io/f/xblklkvy"
     method="POST"

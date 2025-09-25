@@ -12,7 +12,7 @@ const { lang = 'cs' } = Astro.props as Props;
           ? 'AZ Vision Footfall System is an advanced solution for analyzing the number of people visiting retail spaces. It is optimized for managing and analyzing data across multiple locations. It provides accurate people counting, data visualization and easy integration with your existing infrastructure.'
           : 'AZ Vision Footfall System je pokročilý systém pro analýzu počtu osob, které navštívily prodejní prostor. Je optimalizovaný pro správu a analýzu dat z více poboček společnosti. Nabízí přesné počítání návštěvníků, vizualizaci dat a snadnou integraci s Vaší stávající infrastrukturou.'}
       </p>
-      <div class="system-desc-lead">Zákazníci získávají:</div>
+  <div class="system-desc-lead">{lang === 'en' ? 'Customers get:' : 'Zákazníci získávají:'}</div>
       <ul class="system-desc-list">
         <li>
           <span class="desc-icon">
