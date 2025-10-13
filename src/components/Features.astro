@@ -15,286 +15,63 @@ const { lang = 'cs' } = Astro.props as Props;
     <li>{lang === 'en' ? 'Advanced telemetry and camera monitoring' : 'Pokročilá telemetrie a monitoring stavu kamer'}</li>
     <li>{lang === 'en' ? 'Security and privacy protection' : 'Bezpečnost a ochrana soukromí'}</li>
   </ul>
-  <div style="margin-top: 3rem; display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap; text-align: center;">
-    <div style="flex: 1; min-width: 300px; max-width: 48%;">
-      <div class="image-container" onclick="openLightbox('/in-person-chart.png', 'Graf návštěvnosti v portálu AZ Vision')">
-        <img src="/in-person-chart.png" alt="Graf návštěvnosti v portálu AZ Vision" loading="lazy" style="width: 100%; border-radius: 8px; box-shadow: 0 10px 25px rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.1); cursor: pointer;" />
+  
+  <div class="row g-4 mt-3">
+    <div class="col-12 col-md-6">
+      <div class="feature-image-item">
+        <div class="image-container">
+          <img src="/in-person-chart.png" alt="Graf návštěvnosti v portálu AZ Vision" loading="lazy" />
+        </div>
+        <p class="feature-image-caption">{lang === 'en' ? 'Portal visitor chart' : 'Graf návštěvnosti v portálu'}</p>
       </div>
-  <p style="margin-top: 1rem; font-size: 0.9rem; color: #c5c9d3;">{lang === 'en' ? 'Portal visitor chart' : 'Graf návštěvnosti v portálu'}</p>
     </div>
-    <div style="flex: 1; min-width: 300px; max-width: 48%;">
-      <div class="image-container" onclick="openLightbox('/advanced-telemetry.png', 'Graf telemetrie v portálu AZ Vision')">
-        <img src="/advanced-telemetry.png" alt="Graf telemetrie v portálu AZ Vision" loading="lazy" style="width: 100%; border-radius: 8px; box-shadow: 0 10px 25px rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.1); cursor: pointer;" />
+    
+    <div class="col-12 col-md-6">
+      <div class="feature-image-item">
+        <div class="image-container">
+          <img src="/advanced-telemetry.png" alt="Graf telemetrie v portálu AZ Vision" loading="lazy" />
+        </div>
+        <p class="feature-image-caption">{lang === 'en' ? 'Advanced telemetry and camera status' : 'Pokročilá telemetrie a stav kamer'}</p>
       </div>
-  <p style="margin-top: 1rem; font-size: 0.9rem; color: #c5c9d3;">{lang === 'en' ? 'Advanced telemetry and camera status' : 'Pokročilá telemetrie a stav kamer'}</p>
     </div>
-    <div style="flex: 1; min-width: 300px; max-width: 48%;">
-      <div class="image-container" onclick="openLightbox('/excel-export.png', 'Export dat do Microsoft Excelu')">
-        <img src="/excel-export.png" alt="Export dat do Microsoft Excelu" loading="lazy" style="width: 100%; border-radius: 8px; box-shadow: 0 10px 25px rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.1); cursor: pointer;" />
+    
+    <div class="col-12 col-md-6">
+      <div class="feature-image-item">
+        <div class="image-container">
+          <img src="/excel-export.png" alt="Export dat do Microsoft Excelu" loading="lazy" />
+        </div>
+        <p class="feature-image-caption">{lang === 'en' ? 'Export data to Microsoft Excel' : 'Export dat do Microsoft Excelu'}</p>
       </div>
-  <p style="margin-top: 1rem; font-size: 0.9rem; color: #c5c9d3;">{lang === 'en' ? 'Export data to Microsoft Excel' : 'Export dat do Microsoft Excelu'}</p>
     </div>
-    <div style="flex: 1; min-width: 300px; max-width: 48%;">
-      <div class="image-container" onclick="openLightbox('/visitors-categories.png', 'Kategorizace návštěvníků')">
-        <img src="/visitors-categories.png" alt="Kategorizace návštěvníků" loading="lazy" style="width: 100%; border-radius: 8px; box-shadow: 0 10px 25px rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.1); cursor: pointer;" />
+    
+    <div class="col-12 col-md-6">
+      <div class="feature-image-item">
+        <div class="image-container">
+          <img src="/visitors-categories.png" alt="Kategorizace návštěvníků" loading="lazy" />
+        </div>
+        <p class="feature-image-caption">{lang === 'en' ? 'Visitor categorization (men, women, children, strollers)' : 'Kategorizace návštěvníků (muži, ženy, děti, kočárky)'}</p>
       </div>
-  <p style="margin-top: 1rem; font-size: 0.9rem; color: #c5c9d3;">{lang === 'en' ? 'Visitor categorization (men, women, children, strollers)' : 'Kategorizace návštěvníků (muži, ženy, děti, kočárky)'}</p>
     </div>
-    <div style="flex: 1; min-width: 300px; max-width: 48%;">
-      <div class="image-container" onclick="openLightbox('/threshold-line-setup.png', 'Interactive counting threshold setup')">
-        <img src="/threshold-line-setup.png" alt="Threshold line setup" loading="lazy" style="width: 100%; border-radius: 8px; box-shadow: 0 10px 25px rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.1); cursor: pointer;" />
+    
+    <div class="col-12 col-md-6">
+      <div class="feature-image-item">
+        <div class="image-container">
+          <img src="/threshold-line-setup.png" alt="Threshold line setup" loading="lazy" />
+        </div>
+        <p class="feature-image-caption">{lang === 'en' ? 'Interactive counting threshold setup' : 'Interaktivní nastavení prahu počítání'}</p>
       </div>
-  <p style="margin-top: 1rem; font-size: 0.9rem; color: #c5c9d3;">{lang === 'en' ? 'Interactive counting threshold setup' : 'Interaktivní nastavení prahu počítání'}</p>
     </div>
-    <div style="flex: 1; min-width: 300px; max-width: 48%;">
-      <div class="image-container" onclick="openLightbox('/short-clips-recordings.png', 'Short clip recordings')">
-        <img src="/short-clips-recordings.png" alt="Short clip recordings" loading="lazy" style="width: 100%; border-radius: 8px; box-shadow: 0 10px 25px rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.1); cursor: pointer;" />
+    
+    <div class="col-12 col-md-6">
+      <div class="feature-image-item">
+        <div class="image-container">
+          <img src="/short-clips-recordings.png" alt="Short clip recordings" loading="lazy" />
+        </div>
+        <p class="feature-image-caption">{lang === 'en' ? 'Short clip recordings' : 'Krátké záznamy průchodů'}</p>
       </div>
-  <p style="margin-top: 1rem; font-size: 0.9rem; color: #c5c9d3;">{lang === 'en' ? 'Short clip recordings' : 'Krátké záznamy průchodů'}</p>
-    </div>
-  </div>
-
-  <!-- Lightbox Overlay -->
-  <div id="lightbox" class="lightbox" onclick="closeLightbox()">
-    <div class="lightbox-content" onclick="event.stopPropagation()">
-      <span class="lightbox-close" onclick="closeLightbox()">&times;</span>
-      <img id="lightbox-image" src="" alt="" />
-      <div class="lightbox-caption" id="lightbox-caption"></div>
     </div>
   </div>
 </section>
-
-<script is:inline>
-  let currentZoom = 1;
-  let isDragging = false;
-  let startX, startY, translateX = 0, translateY = 0;
-  
-  function openLightbox(imageSrc, caption) {
-    const lightbox = document.getElementById('lightbox');
-    const lightboxImage = document.getElementById('lightbox-image');
-    const lightboxCaption = document.getElementById('lightbox-caption');
-    
-    lightboxImage.src = imageSrc;
-    lightboxImage.alt = caption;
-    lightboxCaption.textContent = caption;
-    lightbox.style.display = 'flex';
-    
-    // Reset zoom and position
-    currentZoom = 1;
-    translateX = 0;
-    translateY = 0;
-    updateImageTransform();
-    
-    // Prevent body scroll when lightbox is open
-    document.body.style.overflow = 'hidden';
-    
-    // Add zoom event listeners
-    addZoomListeners();
-  }
-  
-  function closeLightbox() {
-    const lightbox = document.getElementById('lightbox');
-    lightbox.style.display = 'none';
-    
-    // Restore body scroll
-    document.body.style.overflow = 'auto';
-    
-    // Remove zoom event listeners
-    removeZoomListeners();
-  }
-  
-  function updateImageTransform() {
-    const lightboxImage = document.getElementById('lightbox-image');
-    lightboxImage.style.transform = `translate(${translateX}px, ${translateY}px) scale(${currentZoom})`;
-    lightboxImage.style.cursor = currentZoom > 1 ? 'grab' : 'zoom-in';
-  }
-  
-  function zoomImage(delta, clientX, clientY) {
-    const lightboxImage = document.getElementById('lightbox-image');
-    const rect = lightboxImage.getBoundingClientRect();
-    
-    const zoomFactor = delta > 0 ? 1.2 : 0.8;
-    const newZoom = Math.min(Math.max(currentZoom * zoomFactor, 0.5), 5);
-    
-    if (newZoom !== currentZoom) {
-      // Calculate zoom center point
-      const centerX = clientX - rect.left - rect.width / 2;
-      const centerY = clientY - rect.top - rect.height / 2;
-      
-      // Adjust translation to zoom towards cursor/touch point
-      translateX -= centerX * (newZoom - currentZoom) / currentZoom;
-      translateY -= centerY * (newZoom - currentZoom) / currentZoom;
-      
-      currentZoom = newZoom;
-      updateImageTransform();
-    }
-  }
-  
-  function addZoomListeners() {
-    const lightboxImage = document.getElementById('lightbox-image');
-    
-    // Mouse wheel zoom
-    lightboxImage.addEventListener('wheel', handleWheel);
-    
-    // Mouse click zoom
-    lightboxImage.addEventListener('click', handleClick);
-    
-    // Mouse drag
-    lightboxImage.addEventListener('mousedown', handleMouseDown);
-    document.addEventListener('mousemove', handleMouseMove);
-    document.addEventListener('mouseup', handleMouseUp);
-    
-    // Touch events for mobile
-    lightboxImage.addEventListener('touchstart', handleTouchStart);
-    lightboxImage.addEventListener('touchmove', handleTouchMove);
-    lightboxImage.addEventListener('touchend', handleTouchEnd);
-  }
-  
-  function removeZoomListeners() {
-    const lightboxImage = document.getElementById('lightbox-image');
-    
-    lightboxImage.removeEventListener('wheel', handleWheel);
-    lightboxImage.removeEventListener('click', handleClick);
-    lightboxImage.removeEventListener('mousedown', handleMouseDown);
-    document.removeEventListener('mousemove', handleMouseMove);
-    document.removeEventListener('mouseup', handleMouseUp);
-    lightboxImage.removeEventListener('touchstart', handleTouchStart);
-    lightboxImage.removeEventListener('touchmove', handleTouchMove);
-    lightboxImage.removeEventListener('touchend', handleTouchEnd);
-  }
-  
-  function handleWheel(e) {
-    e.preventDefault();
-    zoomImage(-e.deltaY, e.clientX, e.clientY);
-  }
-  
-  function handleMouseDown(e) {
-    if (currentZoom > 1) {
-      isDragging = true;
-      startX = e.clientX - translateX;
-      startY = e.clientY - translateY;
-      document.getElementById('lightbox-image').style.cursor = 'grabbing';
-    }
-  }
-  
-  function handleMouseMove(e) {
-    if (isDragging) {
-      translateX = e.clientX - startX;
-      translateY = e.clientY - startY;
-      updateImageTransform();
-    }
-  }
-  
-  function handleMouseUp() {
-    isDragging = false;
-    document.getElementById('lightbox-image').style.cursor = currentZoom > 1 ? 'grab' : 'zoom-in';
-  }
-  
-  function handleClick(e) {
-    // Only zoom if not dragging (to avoid zoom on drag end)
-    if (!isDragging) {
-      if (currentZoom === 1) {
-        zoomImage(1, e.clientX, e.clientY);
-      } else {
-        currentZoom = 1;
-        translateX = 0;
-        translateY = 0;
-        updateImageTransform();
-      }
-    }
-  }
-  
-  // Touch handling for mobile
-  let lastTouchDistance = 0;
-  let lastTouchCenter = { x: 0, y: 0 };
-  let touchStartTime = 0;
-  let touchMoved = false;
-  
-  function handleTouchStart(e) {
-    touchStartTime = Date.now();
-    touchMoved = false;
-    
-    if (e.touches.length === 2) {
-      // Pinch zoom start
-      const touch1 = e.touches[0];
-      const touch2 = e.touches[1];
-      lastTouchDistance = Math.hypot(touch2.clientX - touch1.clientX, touch2.clientY - touch1.clientY);
-      lastTouchCenter = {
-        x: (touch1.clientX + touch2.clientX) / 2,
-        y: (touch1.clientY + touch2.clientY) / 2
-      };
-    } else if (e.touches.length === 1) {
-      if (currentZoom > 1) {
-        // Single touch drag when zoomed
-        isDragging = true;
-        startX = e.touches[0].clientX - translateX;
-        startY = e.touches[0].clientY - translateY;
-      }
-      // Store touch position for tap detection
-      startX = e.touches[0].clientX;
-      startY = e.touches[0].clientY;
-    }
-  }
-  
-  function handleTouchMove(e) {
-    e.preventDefault();
-    touchMoved = true;
-    
-    if (e.touches.length === 2) {
-      // Pinch zoom
-      const touch1 = e.touches[0];
-      const touch2 = e.touches[1];
-      const distance = Math.hypot(touch2.clientX - touch1.clientX, touch2.clientY - touch1.clientY);
-      const center = {
-        x: (touch1.clientX + touch2.clientX) / 2,
-        y: (touch1.clientY + touch2.clientY) / 2
-      };
-      
-      if (lastTouchDistance > 0) {
-        const delta = distance - lastTouchDistance;
-        zoomImage(delta, center.x, center.y);
-      }
-      
-      lastTouchDistance = distance;
-      lastTouchCenter = center;
-    } else if (e.touches.length === 1 && isDragging && currentZoom > 1) {
-      // Single touch drag when zoomed
-      translateX = e.touches[0].clientX - startX;
-      translateY = e.touches[0].clientY - startY;
-      updateImageTransform();
-    }
-  }
-  
-  function handleTouchEnd(e) {
-    const touchDuration = Date.now() - touchStartTime;
-    
-    if (e.touches.length === 0) {
-      // Check for single tap (short duration, no movement)
-      if (!touchMoved && touchDuration < 300 && e.changedTouches.length === 1) {
-        const touch = e.changedTouches[0];
-        if (currentZoom === 1) {
-          zoomImage(1, touch.clientX, touch.clientY);
-        } else {
-          currentZoom = 1;
-          translateX = 0;
-          translateY = 0;
-          updateImageTransform();
-        }
-      }
-      
-      isDragging = false;
-      lastTouchDistance = 0;
-      touchMoved = false;
-    }
-  }
-  
-  // Close lightbox with Escape key
-  document.addEventListener('keydown', function(event) {
-    if (event.key === 'Escape') {
-      closeLightbox();
-    }
-  });
-</script>
 
 <style>
   /* Ensure preview thumbnails keep aspect ratio and don't stretch */
@@ -304,95 +81,5 @@ const { lang = 'cs' } = Astro.props as Props;
     width: 100%;
     height: auto !important;
     display: block;
-  }
-
-  .lightbox {
-    display: none;
-    position: fixed;
-    z-index: 1000;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.9);
-    justify-content: center;
-    align-items: center;
-    animation: fadeIn 0.3s ease-in-out;
-  }
-  
-  .lightbox-content {
-    position: relative;
-    max-width: 90%;
-    max-height: 90%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  .lightbox-close {
-    position: absolute;
-    top: -40px;
-    right: 0;
-    color: white;
-    font-size: 2rem;
-    font-weight: bold;
-    cursor: pointer;
-    z-index: 1001;
-    transition: color 0.2s ease;
-  }
-  
-  .lightbox-close:hover {
-    color: rgb(var(--accent-blue));
-  }
-  
-  #lightbox-image {
-    max-width: 100%;
-    max-height: 80vh;
-    object-fit: contain;
-    border-radius: 8px;
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
-    transition: transform 0.2s ease;
-    cursor: zoom-in;
-    user-select: none;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-  }
-  
-  .lightbox-caption {
-    color: white;
-    font-size: 1.1rem;
-    margin-top: 1rem;
-    text-align: center;
-    font-weight: 500;
-  }
-  
-  .image-container {
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-  }
-  
-  .image-container:hover {
-    transform: scale(1.02);
-    box-shadow: 0 15px 35px rgba(0,0,0,0.4);
-  }
-  
-  @keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-  }
-  
-  @media (max-width: 768px) {
-    .lightbox-content {
-      max-width: 95%;
-      max-height: 95%;
-    }
-    
-    #lightbox-image {
-      max-height: 70vh;
-    }
-    
-    .lightbox-caption {
-      font-size: 1rem;
-    }
   }
 </style>

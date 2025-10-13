@@ -4,34 +4,42 @@ const { lang = 'cs' } = Astro.props as Props;
 ---
 <section class="how-it-works">
   <h2>{lang === 'en' ? 'Implementation step by step' : 'Implementace krok za krokem'}</h2>
-  <div class="implementation-steps">
-    <div class="step">
-      <div class="step-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+  <div class="row g-4 my-4">
+    <div class="col-12 col-md-6">
+      <div class="step">
+        <div class="step-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        </div>
+        <div class="step-title"><span class="step-number">1.</span> {lang === 'en' ? 'Site survey by a technician' : 'Prohlídka technikem'}</div>
+        <div class="step-desc">{lang === 'en' ? 'Our specialist will visit your store, assess possibilities and propose camera placement.' : 'Náš odborník navštíví Vaši prodejnu, zhodnotí možnosti a navrhne rozmístění AI kamer.'}</div>
       </div>
-      <div class="step-title"><span class="step-number">1.</span> {lang === 'en' ? 'Site survey by a technician' : 'Prohlídka technikem'}</div>
-      <div class="step-desc">{lang === 'en' ? 'Our specialist will visit your store, assess possibilities and propose camera placement.' : 'Náš odborník navštíví Vaši prodejnu, zhodnotí možnosti a navrhne rozmístění AI kamer.'}</div>
     </div>
-    <div class="step">
-      <div class="step-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="18" height="10" rx="2"/><circle cx="12" cy="12" r="3"/></svg>
+    <div class="col-12 col-md-6">
+      <div class="step">
+        <div class="step-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="18" height="10" rx="2"/><circle cx="12" cy="12" r="3"/></svg>
+        </div>
+        <div class="step-title"><span class="step-number">2.</span> {lang === 'en' ? 'AI camera installation' : 'Instalace AI kamer'}</div>
+        <div class="step-desc">{lang === 'en' ? 'We perform professional installation of cameras with microcomputers, minimizing disruption to operations.' : 'Provedeme profesionální instalaci kamer s mikropočítači, s minimálním narušením provozu.'}</div>
       </div>
-      <div class="step-title"><span class="step-number">2.</span> {lang === 'en' ? 'AI camera installation' : 'Instalace AI kamer'}</div>
-      <div class="step-desc">{lang === 'en' ? 'We perform professional installation of cameras with microcomputers, minimizing disruption to operations.' : 'Provedeme profesionální instalaci kamer s mikropočítači, s minimálním narušením provozu.'}</div>
     </div>
-    <div class="step">
-      <div class="step-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+    <div class="col-12 col-md-6">
+      <div class="step">
+        <div class="step-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+        </div>
+        <div class="step-title"><span class="step-number">3.</span> {lang === 'en' ? 'Access to AZ Vision portal' : 'Přístup do AZ Vision portálu'}</div>
+        <div class="step-desc">{lang === 'en' ? 'You will get access to the portal for monitoring data, device settings and visitor analytics.' : 'Získáte přístup do portálu pro sledování dat, nastavení zařízení a analýzu návštěvnosti.'}</div>
       </div>
-      <div class="step-title"><span class="step-number">3.</span> {lang === 'en' ? 'Access to AZ Vision portal' : 'Přístup do AZ Vision portálu'}</div>
-      <div class="step-desc">{lang === 'en' ? 'You will get access to the portal for monitoring data, device settings and visitor analytics.' : 'Získáte přístup do portálu pro sledování dat, nastavení zařízení a analýzu návštěvnosti.'}</div>
     </div>
-    <div class="step">
-      <div class="step-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"/><ellipse cx="12" cy="12" rx="9" ry="3"/><ellipse cx="12" cy="19" rx="9" ry="3"/></svg>
+    <div class="col-12 col-md-6">
+      <div class="step">
+        <div class="step-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"/><ellipse cx="12" cy="12" rx="9" ry="3"/><ellipse cx="12" cy="19" rx="9" ry="3"/></svg>
+        </div>
+        <div class="step-title"><span class="step-number">4.</span> {lang === 'en' ? 'Integration with your infrastructure' : 'Integrace s infrastrukturou'}</div>
+        <div class="step-desc">{lang === 'en' ? 'The system can be integrated with other systems, e.g. POS, attendance or sending data to your database.' : 'Systém lze propojit s dalšími systémy, např. pokladnami, docházkou nebo posílat data do Vaší databáze.'}</div>
       </div>
-      <div class="step-title"><span class="step-number">4.</span> {lang === 'en' ? 'Integration with your infrastructure' : 'Integrace s infrastrukturou'}</div>
-      <div class="step-desc">{lang === 'en' ? 'The system can be integrated with other systems, e.g. POS, attendance or sending data to your database.' : 'Systém lze propojit s dalšími systémy, např. pokladnami, docházkou nebo posílat data do Vaší databáze.'}</div>
     </div>
   </div>
 </section>
