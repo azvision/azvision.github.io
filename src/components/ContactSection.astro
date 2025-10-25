@@ -2,7 +2,7 @@
 interface Props { lang?: string }
 const { lang = 'cs' } = Astro.props as Props;
 ---
-<section class="contact">
+<section id="contact" class="contact">
   <h2>{lang === 'en' ? 'Contact for AI visitor analytics' : 'Kontakt pro AI řešení návštěvnosti'}</h2>
   
   <div class="company-info">
@@ -22,7 +22,7 @@ const { lang = 'cs' } = Astro.props as Props;
   <div class="contact-details">
     <p class="contact-email"><a href="mailto:info@azvision.cz">info@azvision.cz</a></p>
     <p class="contact-phone"><a href="tel:+420725398765">+420 725 398 765</a></p>
-    <p>{lang === 'en' ? "Interested in a solution, a quote or need more information?" : 'Máte zájem o řešení, cenovou nabídku nebo potřebujete více informací?'}</p>
+    <p class="contact-info-text">{lang === 'en' ? "Interested in a solution, a quote or need more information?" : 'Máte zájem o řešení, cenovou nabídku nebo potřebujete více informací?'}</p>
   </div>
   <form
     action="https://formspree.io/f/xblklkvy"
