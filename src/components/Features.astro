@@ -16,6 +16,15 @@ const { lang = 'cs' } = Astro.props as Props;
     <li>{lang === 'en' ? 'Security and privacy protection' : 'Bezpečnost a ochrana soukromí'}</li>
   </ul>
   
+  <div class="col-12 col-md-6">
+    <div class="feature-image-item">
+      <div class="image-container">
+        <img src="/footfall-preview.jpg" alt={lang === 'en' ? 'Footfall overview preview' : 'Náhled přehledu návštěvnosti'} loading="lazy" />
+      </div>
+      <p class="feature-image-caption">{lang === 'en' ? 'Footfall overview preview' : 'Náhled přehledu návštěvnosti'}</p>
+    </div>
+  </div>
+  
   <div class="row g-4 mt-3">
     <div class="col-12 col-md-6">
       <div class="feature-image-item">
