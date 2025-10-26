@@ -79,6 +79,37 @@ const { lang = 'cs' } = Astro.props as Props;
         <p class="feature-image-caption">{lang === 'en' ? 'Short clip recordings' : 'Krátké záznamy průchodů'}</p>
       </div>
     </div>
+
+    <div class="col-12 col-md-6">
+      <div class="feature-image-item">
+        <div class="image-container video-wrapper" style="position:relative;">
+          <video id="detection-video" src="/detection-2025-10-25T17_25_45.016.mp4" controls style="width:100%;height:auto;display:block;border-radius:0.75rem;background:#000;"></video>
+          <button id="custom-play-btn" type="button" aria-label="Play video" style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);background:rgba(0,0,0,0.6);border:none;border-radius:50%;width:80px;height:80px;display:flex;align-items:center;justify-content:center;z-index:2;cursor:pointer;transition:background 0.2s;">
+            <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="24" cy="24" r="24" fill="white" fill-opacity="0.85"/>
+              <polygon points="19,15 36,24 19,33" fill="#222"/>
+            </svg>
+          </button>
+        </div>
+        <p class="feature-image-caption">{lang === 'en' ? 'Detection video sample' : 'Ukázka detekce návštěvníka'}</p>
+        <script is:inline>
+          const video = document.getElementById('detection-video');
+          const playBtn = document.getElementById('custom-play-btn');
+          if (video && playBtn) {
+            // Hide play button if video is playing
+            const updateBtn = () => {
+              playBtn.style.display = video.paused ? 'flex' : 'none';
+            };
+            playBtn.addEventListener('click', () => {
+              video.play();
+            });
+            video.addEventListener('play', updateBtn);
+            video.addEventListener('pause', updateBtn);
+            updateBtn();
+          }
+        </script>
+      </div>
+    </div>
   </div>
 </section>
 
