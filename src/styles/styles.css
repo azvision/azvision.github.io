@@ -61,6 +61,8 @@ html {
   --bg-accent-medium: rgba(100, 200, 255, 0.22);
   --bg-white-light: rgba(255, 255, 255, 0.1);
   --bg-white-medium: rgba(255, 255, 255, 0.15);
+  /* navbar height for fixed-top offset */
+  --navbar-height: 56px;
 }
 
 /* ===== GLOBAL STYLES ===== */
@@ -69,11 +71,15 @@ html {
   background: linear-gradient(135deg, rgb(var(--accent-dark)) 0%, rgb(var(--accent-navy)) 100%);
   background-attachment: fixed;
   scroll-behavior: smooth;
+  /* offset anchor scrolling to account for fixed navbar */
+  scroll-padding-top: var(--navbar-height);
 }
 
 body {
   margin: 0;
   padding: 0;
+  /* reserve space for fixed navbar so content doesn't sit under it */
+  padding-top: var(--navbar-height);
   /* Override Bootstrap body background so the html gradient remains visible */
   background: transparent !important;
 }
@@ -166,8 +172,10 @@ body {
 @media (max-width: 992px) {
   .navbar-nav { flex-direction: column; gap: 0; }
   .navbar-toggler { display: inline-block; }
-  .collapse.navbar-collapse { display: none; }
-  .collapse.navbar-collapse.show { display: block; }
+  .collapse.navbar-collapse { display: none !important; }
+  .collapse.navbar-collapse.show { display: block !important; }
+  /* Force collapse hidden by default to avoid being open on initial render */
+  .collapse.navbar-collapse:not(.show) { display: none !important; }
 }
 
 /* More specific overrides to prevent default browser list styles and link colors */
@@ -912,6 +920,11 @@ footer a:hover {
     flex-direction: column;
     gap: 1.2rem;
   }
+
+/* Adjust navbar height for larger viewports */
+@media (min-width: 992px) {
+  :root { --navbar-height: 70px; }
+}
   
   .logo-item {
     min-width: 100%;
