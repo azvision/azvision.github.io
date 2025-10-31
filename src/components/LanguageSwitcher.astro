@@ -1,17 +1,52 @@
 ---
-interface Props { current?: string }
-const { current = 'cs' } = Astro.props as Props;
+interface Props { current?: string; inline?: boolean }
+const { current = 'cs', inline = false } = Astro.props as Props;
 ---
 
-<nav class="language-switcher" style="margin: 1rem 0;">
-  <!-- English first -->
-  {current === 'en' ? (
-    <>
-      <span aria-current="true" style="font-weight:700;">English</span> | <a href="/">Čeština</a>
-    </>
-  ) : (
-    <>
-      <a href="/en/">English</a> | <span aria-current="true" style="font-weight:700;">Čeština</span>
-    </>
-  )}
-</nav>
+{inline ? (
+  <div class="language-switcher d-flex align-items-center" style="gap:0.5rem;">
+    {current === 'en' ? (
+      <>
+        <span aria-current="true" style="font-weight:700;" aria-label="English">
+          <img src="/flags/gb.svg" alt="English" class="language-flag" />
+        </span>
+        <a href="/" aria-label="Čeština" class="ms-2">
+          <img src="/flags/cz.svg" alt="Čeština" class="language-flag" />
+        </a>
+      </>
+    ) : (
+      <>
+        <a href="/en/" aria-label="English">
+          <img src="/flags/gb.svg" alt="English" class="language-flag" />
+        </a>
+        <span aria-current="true" style="font-weight:700;" aria-label="Čeština" class="ms-2">
+          <img src="/flags/cz.svg" alt="Čeština" class="language-flag" />
+        </span>
+      </>
+    )}
+  </div>
+) : (
+  <nav class="language-switcher" style="margin: 1rem 0;">
+    {current === 'en' ? (
+      <>
+        <span aria-current="true" style="font-weight:700;" aria-label="English">
+          <img src="/flags/gb.svg" alt="English" class="language-flag" />
+        </span>
+        |
+        <a href="/" aria-label="Čeština">
+          <img src="/flags/cz.svg" alt="Čeština" class="language-flag" />
+        </a>
+      </>
+    ) : (
+      <>
+        <a href="/en/" aria-label="English">
+          <img src="/flags/gb.svg" alt="English" class="language-flag" />
+        </a>
+        |
+        <span aria-current="true" style="font-weight:700;" aria-label="Čeština">
+          <img src="/flags/cz.svg" alt="Čeština" class="language-flag" />
+        </span>
+      </>
+    )}
+  </nav>
+)}

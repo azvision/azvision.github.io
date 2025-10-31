@@ -1,121 +1,198 @@
 ---
 // using plain <img> tags for thumbnails to allow responsive sizing via CSS
-interface Props { lang?: string }
-const { lang = 'cs' } = Astro.props as Props;
+interface Props {
+  lang?: string;
+}
+const { lang = "cs" } = Astro.props as Props;
 ---
+
 <section class="features">
-  <h2>{lang === 'en' ? 'Do you know how your marketing campaigns really perform?' : 'Víte, jak vám skutečně fungují marketingové akce?'}</h2>
-  <p>
-    {lang === 'en'
-      ? 'The screenshots below tell the story step by step.'
-      : 'Níže uvedené náhledy vyprávějí příběh krok za krokem.'}
+  <h2>
+    {
+      lang === "en"
+        ? "Do you know how your marketing campaigns really perform?"
+        : "Víte, jak vám skutečně fungují marketingové akce?"
+    }
+  </h2>
+
+  <div class="feature-image-item col-12 col-md-6">
+    <div class="image-container">
+      <img
+        src="/footfall-preview.jpg"
+        alt={lang === "en"
+          ? "Footfall overview preview"
+          : "Náhled přehledu návštěvnosti"}
+        loading="lazy"
+      />
+    </div>
+    <p class="feature-image-caption">
+      {
+        lang === "en"
+          ? "Start here: accurate real‑time people counting shows how each campaign reshapes the day. Data is stored securely in Microsoft Azure."
+          : "AI kamera přesně sleduje každého zákazníka, jak vchází do vaší prodejny."
+      }
+    </p>
+  </div>
+
+  <div class="feature-image-item col-12 col-md-6">
+    <div class="image-container">
+      <img
+        src="/hourly_data.png"
+        alt={lang === "en"
+          ? "Hourly footfall chart in AZ Vision portal"
+          : "Hodinový graf návštěvnosti v portálu AZ Vision"}
+        loading="lazy"
+      />
+    </div>
+    <p class="feature-image-caption">
+      {
+        lang === "en"
+          ? "Hourly view pinpoints promo impact by hour and daypart — ready to integrate with your systems."
+          : "Uvidíte kolik návštěvníků máte hodinu po hodině."
+      }
+    </p>
+  </div>
+
+  <div class="feature-image-item col-12 col-md-6">
+    <div class="image-container">
+      <img
+        src="/in-person-chart.png"
+        alt="Graf návštěvnosti v portálu AZ Vision"
+        loading="lazy"
+      />
+    </div>
+    <p class="feature-image-caption">
+      {
+        lang === "en"
+          ? "Modern web interface: zoom into days and hours to match traffic with campaign times."
+          : "Porovnejte stejné dny s předchozími obdobími a uvidíte změny na první pohled."
+      }
+    </p>
+  </div>
+
+  <div class="feature-image-item col-12 col-md-6">
+    <div class="image-container">
+      <img
+        src="/excel-export.png"
+        alt="Export dat do Microsoft Excelu"
+        loading="lazy"
+      />
+    </div>
+    <p class="feature-image-caption">
+      {
+        lang === "en"
+          ? "Export to Microsoft Excel and share results across teams in one click."
+          : "Exportujte si data do Microsoft Excelu a sdílejte je s týmem jedním klikem."
+      }
+    </p>
+  </div>
+
+  <div class="features-cta-wrapper">
+    <a href="#contact" class="hero-cta-btn"
+      >{lang === "en" ? "Do you want offer?" : "Chcete nabídku?"}
+    </a>
+  </div>
+
+  <div class="feature-image-item col-12 col-md-6">
+    <div class="image-container">
+      <img
+        src="/visitors-categories.png"
+        alt="Kategorizace návštěvníků"
+        loading="lazy"
+      />
+    </div>
+  </div>
+  <p class="feature-image-caption">
+    {
+      lang === "en"
+        ? "See who responds: men, women, children... or strollers? :-)"
+        : "Zjistěte, kdo reaguje: muži, ženy, děti... nebo kočárky? :-)"
+    }
   </p>
-  
-  
-  <div class="col-12 col-md-6">
-    <div class="feature-image-item">
-      <div class="image-container">
-        <img src="/footfall-preview.jpg" alt={lang === 'en' ? 'Footfall overview preview' : 'Náhled přehledu návštěvnosti'} loading="lazy" />
-      </div>
-      <p class="feature-image-caption">{lang === 'en' ? 'Start here: accurate real‑time people counting shows how each campaign reshapes the day. Data is stored securely in Microsoft Azure.' : 'AI kamera přesně sleduje každého zákazníka, jak vchází do vaší prodejny.'}</p>
-    </div>
-  </div>
-  
-  <div class="col-12 col-md-6">
-    <div class="feature-image-item">
-      <div class="image-container">
-        <img src="/hourly_data.png" alt={lang === 'en' ? 'Hourly footfall chart in AZ Vision portal' : 'Hodinový graf návštěvnosti v portálu AZ Vision'} loading="lazy" />
-      </div>
-      <p class="feature-image-caption">{lang === 'en' ? 'Hourly view pinpoints promo impact by hour and daypart — ready to integrate with your systems.' : 'Uvidíte kolik návštěvníků máte hodinu po hodině.'}</p>
-    </div>
-  </div>
-  
-  <div class="row g-4 mt-3">
-    <div class="col-12 col-md-6">
-      <div class="feature-image-item">
-        <div class="image-container">
-          <img src="/in-person-chart.png" alt="Graf návštěvnosti v portálu AZ Vision" loading="lazy" />
-        </div>
-        <p class="feature-image-caption">{lang === 'en' ? 'Modern web interface: zoom into days and hours to match traffic with campaign times.' : 'Porovnejte stejné dny s předchozími obdobími a uvidíte změny na první pohled.'}</p>
-      </div>
-    </div>
 
-    <div class="col-12 col-md-6">
-      <div class="feature-image-item">
-        <div class="image-container">
-          <img src="/excel-export.png" alt="Export dat do Microsoft Excelu" loading="lazy" />
-        </div>
-        <p class="feature-image-caption">{lang === 'en' ? 'Export to Microsoft Excel and share results across teams in one click.' : 'Exportujte si data do Microsoft Excelu a sdílejte je s týmem jedním klikem.'}</p>
-      </div>
+  <div class="feature-image-item col-12 col-md-6">
+    <div class="image-container">
+      <img
+        src="/threshold-line-setup.png"
+        alt="Threshold line setup"
+        loading="lazy"
+      />
     </div>
-    
-    <div class="col-12 col-md-6">
-      <div class="feature-image-item">
-        <div class="image-container">
-          <img src="/visitors-categories.png" alt="Kategorizace návštěvníků" loading="lazy" />
-        </div>
-        <p class="feature-image-caption">{lang === 'en' ? 'See who responds: men, women, children, strollers.' : 'Zjistěte, kdo reaguje: muži, ženy, děti, kočárky.'}</p>
-      </div>
-    </div>
-    
-    <div class="col-12 col-md-6">
-      <div class="feature-image-item">
-        <div class="image-container">
-          <img src="/threshold-line-setup.png" alt="Threshold line setup" loading="lazy" />
-        </div>
-        <p class="feature-image-caption">{lang === 'en' ? 'Set precise counting boundaries for entrances. Combine multiple cameras for wide entrances.' : 'Nastavte přesné hranice pro započítání vstupu. Je možné kombinovat více kamer pro široké vstupy.'}</p>
-      </div>
-    </div>
-    
-    <div class="col-12 col-md-6">
-      <div class="feature-image-item">
-        <div class="image-container">
-          <img src="/short-clips-recordings.png" alt="Short clip recordings" loading="lazy" />
-        </div>
-        <p class="feature-image-caption">{lang === 'en' ? 'Advanced telemetry and camera monitoring — validate counts with short, privacy‑respecting proof clips.' : 'Pokročilá telemetrie a monitoring kamer — ověřte počty krátkými, na soukromí dbajícími ukázkami.'}</p>
-      </div>
-    </div>
+    <p class="feature-image-caption">
+      {
+        lang === "en"
+          ? "Set precise counting boundaries for entrances. Combine multiple cameras for wide entrances."
+          : "Nastavte přesné hranice pro započítání vstupu. Je možné kombinovat více kamer pro široké vstupy."
+      }
+    </p>
+  </div>
 
-    <div class="col-12 col-md-6">
-      <div class="feature-image-item">
-        <div class="image-container video-wrapper" style="position:relative;">
-          <video id="detection-video" src="/detection-2025-10-25T17_25_45.016.mp4" controls style="width:100%;height:auto;display:block;border-radius:0.75rem;background:#000;"></video>
-          <button id="custom-play-btn" type="button" aria-label="Play video" style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);background:rgba(0,0,0,0.6);border:none;border-radius:50%;width:80px;height:80px;display:flex;align-items:center;justify-content:center;z-index:2;cursor:pointer;transition:background 0.2s;">
-            <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <circle cx="24" cy="24" r="24" fill="white" fill-opacity="0.85"/>
-              <polygon points="19,15 36,24 19,33" fill="#222"/>
-            </svg>
-          </button>
-        </div>
-        <p class="feature-image-caption">{lang === 'en' ? 'Watch detections in action — how a visit becomes a data point.' : 'Podívejte se na detekce v praxi.'}</p>
-        <script is:inline>
-          const video = document.getElementById('detection-video');
-          const playBtn = document.getElementById('custom-play-btn');
-          if (video && playBtn) {
-            // Hide play button if video is playing
-            const updateBtn = () => {
-              playBtn.style.display = video.paused ? 'flex' : 'none';
-            };
-            playBtn.addEventListener('click', () => {
-              video.play();
-            });
-            video.addEventListener('play', updateBtn);
-            video.addEventListener('pause', updateBtn);
-            updateBtn();
-          }
-        </script>
-      </div>
+  <div class="feature-image-item col-12 col-md-6">
+    <div class="image-container">
+      <img
+        src="/short-clips-recordings.png"
+        alt="Short clip recordings"
+        loading="lazy"
+      />
     </div>
+    <p class="feature-image-caption">
+      {
+        lang === "en"
+          ? "Advanced telemetry and camera monitoring — validate counts with short, privacy‑respecting proof clips."
+          : "Pokročilá telemetrie a monitoring kamer — ověřte počty krátkými, na soukromí dbajícími ukázkami."
+      }
+    </p>
+  </div>
+
+  <div class="feature-image-item col-12 col-md-6">
+    <div class="image-container video-wrapper" style="position:relative;">
+      <video
+        id="detection-video"
+        src="/detection-2025-10-25T17_25_45.016.mp4"
+        controls
+        style="width:100%;height:auto;display:block;border-radius:0.75rem;background:#000;"
+      ></video>
+      <button
+        id="custom-play-btn"
+        type="button"
+        aria-label="Play video"
+        style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);background:rgba(0,0,0,0.6);border:none;border-radius:50%;width:80px;height:80px;display:flex;align-items:center;justify-content:center;z-index:2;cursor:pointer;transition:background 0.2s;"
+      >
+        <svg
+          width="48"
+          height="48"
+          viewBox="0 0 48 48"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <circle cx="24" cy="24" r="24" fill="white" fill-opacity="0.85"
+          ></circle>
+          <polygon points="19,15 36,24 19,33" fill="#222"></polygon>
+        </svg>
+      </button>
+    </div>
+    <p class="feature-image-caption">
+      {
+        lang === "en"
+          ? "Watch detections in action — how a visit becomes a data point."
+          : "Podívejte se na detekce v praxi."
+      }
+    </p>
+    <script is:inline>
+      const video = document.getElementById("detection-video");
+      const playBtn = document.getElementById("custom-play-btn");
+      if (video && playBtn) {
+        // Hide play button if video is playing
+        const updateBtn = () => {
+          playBtn.style.display = video.paused ? "flex" : "none";
+        };
+        playBtn.addEventListener("click", () => {
+          video.play();
+        });
+        video.addEventListener("play", updateBtn);
+        video.addEventListener("pause", updateBtn);
+        updateBtn();
+      }
+    </script>
   </div>
 </section>
-
-<style>
-  /* Ensure preview thumbnails keep aspect ratio and don't stretch */
-  .image-container,
-  .image-container picture,
-  .image-container img {
-    width: 100%;
-    height: auto !important;
-    display: block;
-  }
-</style>

@@ -45,6 +45,9 @@ import LanguageSwitcher from '../components/LanguageSwitcher.astro';
 		<!-- Preconnect for performance -->
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+		<!-- Bootstrap CSS (CDN) - no integrity attribute to avoid blocking if hash mismatches locally -->
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 		
 		<!-- Preload critical CSS -->
 		<link rel="preload" href="/src/styles/styles.css" as="style" />
@@ -93,7 +96,50 @@ import LanguageSwitcher from '../components/LanguageSwitcher.astro';
 		<title>{title}</title>
 	</head>
 	<body>
-			<LanguageSwitcher current={lang} />
+		<header>
+			<nav class="navbar navbar-expand-lg navbar-dark bg-dark" aria-label={lang === "en" ? "Main navigation" : "Hlavní navigace"}>
+				<div class="container">
+						<a class="navbar-brand" href="/">AZ Vision</a>
+					<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar" aria-controls="mainNavbar" aria-expanded="false" aria-label="Toggle navigation">
+						<span class="navbar-toggler-icon"></span>
+					</button>
+					<div class="collapse navbar-collapse" id="mainNavbar">
+						<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+							<li class="nav-item"><a class="nav-link" href="#hero">{lang === "en" ? 'Home' : 'Úvod'}</a></li>
+							<li class="nav-item"><a class="nav-link" href="#about">{lang === "en" ? 'About' : 'O nás'}</a></li>
+							<li class="nav-item"><a class="nav-link" href="#features">{lang === "en" ? 'How it works' : 'Jak to funguje'}</a></li>
+							<li class="nav-item"><a class="nav-link" href="#how-it-works">{lang === "en" ? 'Implementation' : 'Implementace'}</a></li>
+							<li class="nav-item"><a class="nav-link" href="#references">{lang === "en" ? 'References' : 'Reference'}</a></li>
+							<li class="nav-item"><a class="nav-link" href="#contact">{lang === "en" ? 'Contact' : 'Kontakt'}</a></li>
+						</ul>
+						<div class="d-flex align-items-center">
+							<LanguageSwitcher current={lang} inline />
+						</div>
+					</div>
+				</div>
+			</nav>
+		</header>
 		<slot />
+
+		<script is:inline>
+			// Ensure target sections have IDs so the nav anchors work even if components use classes
+			(function() {
+				const map = [
+					{id: 'hero', selector: '.hero'},
+					{id: 'about', selector: '.product-overview'},
+					{id: 'features', selector: '.features'},
+					{id: 'how-it-works', selector: '.how-it-works'},
+					{id: 'references', selector: '.references'},
+					{id: 'contact', selector: '#contact'}
+				];
+				map.forEach(item => {
+					const el = document.querySelector(item.selector);
+					if (el && !el.id) el.id = item.id;
+				});
+			})();
+		</script>
+
+		<!-- Bootstrap JS bundle (CDN) -->
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 	</body>
 	</html>

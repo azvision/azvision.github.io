@@ -74,6 +74,8 @@ html {
 body {
   margin: 0;
   padding: 0;
+  /* Override Bootstrap body background so the html gradient remains visible */
+  background: transparent !important;
 }
 
 /* Language switcher styles */
@@ -102,6 +104,93 @@ body {
   padding: 0.18rem 0.5rem;
   border-radius: 6px;
 }
+
+/* Small flag images in language switcher */
+.language-flag {
+  height: 18px;
+  width: auto;
+  vertical-align: middle;
+  display: inline-block;
+  margin: 0 0.25rem;
+}
+
+/* Fallback navbar styles in case Bootstrap CSS doesn't load */
+.navbar {
+  display: flex;
+  align-items: center;
+  padding: 0.5rem 1rem;
+}
+.navbar .container {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  gap: 1rem;
+}
+.navbar-brand {
+  color: #fff;
+  font-weight: 700;
+  text-decoration: none;
+}
+.bg-dark { background-color: #0b1220 !important; }
+.navbar-nav {
+  display: flex;
+  gap: 0.5rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  align-items: center;
+}
+.navbar-nav .nav-item { display: block; }
+.navbar-nav .nav-link {
+  color: rgba(255,255,255,0.9);
+  text-decoration: none;
+  padding: 0.4rem 0.6rem;
+}
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link:focus { color: #e54b4b; opacity: 0.95; }
+.navbar-toggler {
+  background: rgba(255,255,255,0.06);
+  border: none;
+  padding: 0.4rem 0.6rem;
+  color: #fff;
+  display: none;
+}
+.navbar-toggler-icon {
+  display: inline-block;
+  width: 1.25rem;
+  height: 1.25rem;
+  background-color: rgba(255,255,255,0.2);
+  border-radius: 0.25rem;
+}
+/* simple responsive collapse behavior when Bootstrap JS is not present */
+@media (max-width: 992px) {
+  .navbar-nav { flex-direction: column; gap: 0; }
+  .navbar-toggler { display: inline-block; }
+  .collapse.navbar-collapse { display: none; }
+  .collapse.navbar-collapse.show { display: block; }
+}
+
+/* More specific overrides to prevent default browser list styles and link colors */
+nav.navbar ul.navbar-nav {
+  list-style: none !important;
+  padding-left: 0 !important;
+  margin-left: 0 !important;
+}
+nav.navbar a.nav-link {
+  color: rgba(255,255,255,0.95) !important;
+  text-decoration: none !important;
+}
+nav.navbar a.nav-link:hover, nav.navbar a.nav-link:focus {
+  color: #e54b4b !important;
+}
+/* Remove the small rounded background for active language when inside navbar */
+nav.navbar .language-switcher span[aria-current="true"],
+nav.navbar .language-switcher .active {
+  background: transparent !important;
+  padding: 0 !important;
+  border-radius: 0 !important;
+}
+nav.navbar .language-switcher { margin: 0 !important; }
 
 code {
   font-family: 'Monaco', 'Menlo', 'Courier New', monospace;
@@ -231,11 +320,11 @@ section::before {
 }
 
 .hero-img {
-  margin-top: 3rem;
   max-width: 580px;
   box-shadow: var(--shadow-medium);
   border-radius: var(--border-radius);
   border: 1px solid rgba(100, 200, 255, 0.3);
+  margin-bottom: 1.5rem;
 }
 
 
@@ -308,6 +397,32 @@ section::before {
 .features li, .how-it-works li {
   margin-bottom: 0.6rem;
   padding-left: 0.3rem;
+}
+
+/* Feature images and captions (moved from component-level styles) */
+.features .image-container,
+.features .image-container picture,
+.features .image-container img {
+  width: 100%;
+  height: auto !important;
+  display: block;
+}
+
+.features .image-container + .feature-image-caption,
+.features .feature-image-caption {
+  text-align: center;
+  margin: 0.75rem auto 1.5rem auto;
+  max-width: 48rem;
+  color: inherit;
+  line-height: 1.4;
+  display: block;
+  width: 100%;
+}
+
+.features .features-cta-wrapper {
+  text-align: center;
+  width: 100%;
+  margin: 1.5rem 0;
 }
 
 /* Steps */
@@ -401,14 +516,19 @@ section::before {
   border-radius: var(--border-radius);
   text-decoration: none;
   box-shadow: var(--shadow-medium);
+  /* Prevent gradient from bleeding under the border which can create thin lines */
+  background-clip: padding-box;
+  -webkit-background-clip: padding-box;
   transition: all var(--transition-normal);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  /* Use inset box-shadow to simulate a subtle border to avoid subpixel hairline on hover */
+  border: none;
+  box-shadow: var(--shadow-medium), inset 0 0 0 1px rgba(255, 255, 255, 0.08);
   cursor: pointer;
 }
 
 .hero-cta-btn {
-  display: block;
-  margin-top: 2rem;
+  /* Match .contact-btn to avoid hairline artifacts: inline-block + centered via .hero text-align */
+  display: inline-block;
   padding: 1rem 2.5rem;
   background: var(--accent-gradient);
   color: #fff;
@@ -417,14 +537,20 @@ section::before {
   border-radius: var(--border-radius);
   text-decoration: none;
   box-shadow: var(--shadow-medium);
+  /* Prevent gradient from bleeding under the border which can create thin lines */
+  background-clip: padding-box;
+  -webkit-background-clip: padding-box;
   transition: all var(--transition-normal);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  /* Use inset box-shadow to simulate a subtle border to avoid subpixel hairline on hover */
+  border: none;
+  box-shadow: var(--shadow-medium), inset 0 0 0 1px rgba(255, 255, 255, 0.08);
   cursor: pointer;
 }
 
 .contact-btn:hover, .hero-cta-btn:hover {
   transform: translateY(-2px);
-  box-shadow: var(--shadow-heavy), var(--shadow-glow);
+  /* Lift and glow on hover while preserving the inset border look */
+  box-shadow: var(--shadow-heavy), var(--shadow-glow), inset 0 0 0 1px rgba(255, 255, 255, 0.06);
   background: var(--accent-gradient-reverse);
 }
 
@@ -603,34 +729,68 @@ footer a:hover {
 }
 
 .feature-image-item {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  padding: 1rem 0;
+  width: 100%;
 }
 
-.image-container {
+.feature-image-item .image-container {
   width: 100%;
-  cursor: pointer;
-  border-radius: var(--border-radius);
+  max-width: 520px; /* default max width */
+  margin: 0 auto;
+  border-radius: 0.75rem;
   overflow: hidden;
-  transition: all var(--transition-normal);
   border: 1px solid rgba(100, 200, 255, 0.25);
-  box-shadow: var(--shadow-light);
+  box-shadow: var(--shadow-medium);
 }
 
-
-.image-container img {
+.feature-image-item .image-container img {
   width: 100%;
+  height: auto !important;
   display: block;
-  transition: transform var(--transition-normal);
+  border-radius: 0.75rem;
 }
-
 
 .feature-image-caption {
-  margin-top: 1rem;
-  font-size: 0.95rem;
-  color: rgba(255, 255, 255, 0.88);
-  line-height: 1.5;
+  text-align: center;
+  margin-top: 0.75rem;
+  color: rgba(255,255,255,0.95);
+  max-width: 420px;
+}
+
+@media (min-width: 768px) {
+  .feature-image-item .image-container { max-width: 640px; }
+}
+
+@media (min-width: 1200px) {
+  .feature-image-item .image-container { max-width: 760px; }
+}
+
+/* CTA inside features */
+.features-cta-wrapper {
+  display: flex;
+  justify-content: center;
+  margin: 0rem 0 3rem;
+}
+.features-cta-btn {
+  background: var(--primary, #0d6efd);
+  color: #fff;
+  min-width: 220px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.5rem;
+  text-decoration: none;
+  font-weight: 600;
+}
+.features-cta-btn:hover { opacity: 0.95; }
+
+/* Small utility to ensure preview thumbnails keep aspect ratio */
+.image-container,
+.image-container picture,
+.image-container img {
+  width: 100%;
+  height: auto !important;
+  display: block;
 }
 
 /* References */
