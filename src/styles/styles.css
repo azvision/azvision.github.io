@@ -311,7 +311,9 @@ section::before {
 .logo-img {
   display: block;
   margin: 0 auto 2rem;
-  width: 468px;
+  width: auto;
+  max-width: 468px; /* desktop cap */
+  max-width: min(468px, 80vw);
   height: auto;
   box-shadow: none;
   border-radius: 1rem;
