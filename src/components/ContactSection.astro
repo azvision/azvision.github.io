@@ -47,3 +47,11 @@ const { lang = 'cs' } = Astro.props as Props;
     <button type="submit" class="contact-btn">{lang === 'en' ? 'Send' : 'Odeslat'}</button>
   </form>
 </section>
+
+<script is:inline>
+  document.querySelector('#contact form').addEventListener('submit', function() {
+    gtag('event', 'conversion', {
+      'send_to': 'AW-993994636/8wxYCNW99vQbEIzP_NkD'
+    });
+  });
+</script>
