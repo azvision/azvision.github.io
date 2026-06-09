@@ -115,6 +115,7 @@ import LanguageSwitcher from '../components/LanguageSwitcher.astro';
 							<li class="nav-item"><a class="nav-link" href="#hero">{lang === "en" ? 'Home' : 'Úvod'}</a></li>
 							<li class="nav-item"><a class="nav-link" href="#about">{lang === "en" ? 'About' : 'O nás'}</a></li>
 							<li class="nav-item"><a class="nav-link" href="#features">{lang === "en" ? 'How it works' : 'Jak to funguje'}</a></li>
+							<li class="nav-item"><a class="nav-link" href="#advanced">{lang === "en" ? 'Advanced features' : 'Pokročilé funkce'}</a></li>
 							<li class="nav-item"><a class="nav-link" href="#how-it-works">{lang === "en" ? 'Implementation' : 'Implementace'}</a></li>
 							<li class="nav-item"><a class="nav-link" href="#references">{lang === "en" ? 'References' : 'Reference'}</a></li>
 							<li class="nav-item"><a class="nav-link" href="#contact">{lang === "en" ? 'Contact' : 'Kontakt'}</a></li>
@@ -134,7 +135,8 @@ import LanguageSwitcher from '../components/LanguageSwitcher.astro';
 				{id: 'hero', selector: '.hero'},
 				{id: 'about', selector: '.product-overview'},
 				{id: 'features', selector: '.features'},
-				{id: 'how-it-works', selector: '.how-it-works'},
+				{id: 'advanced', selector: '.advanced-features'},
+					{id: 'how-it-works', selector: '.how-it-works'},
 				{id: 'references', selector: '.references'},
 				{id: 'contact', selector: '#contact'}
 			].forEach(({id, selector}) => {
