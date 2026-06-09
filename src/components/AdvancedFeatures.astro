@@ -1,0 +1,60 @@
+---
+interface Props {
+  lang?: string;
+}
+const { lang = "cs" } = Astro.props as Props;
+---
+
+<section class="features advanced-features">
+  <h2>
+    {lang === "en" ? "Advanced features" : "Pokročilé funkce"}
+  </h2>
+
+  <div class="advanced-feature-item">
+    <h3 class="advanced-feature-title">
+      {lang === "en" ? "Group detection" : "Detekce skupin"}
+    </h3>
+    <div class="feature-image-item">
+      <div class="image-container">
+        <img
+          src="/group-detection.jpg"
+          alt={lang === "en"
+            ? "Two people linked as one group by AZ Vision detection"
+            : "Dva lidé propojení do jedné skupiny detekcí AZ Vision"}
+          loading="lazy"
+        />
+      </div>
+    </div>
+    <p class="feature-image-caption">
+      {
+        lang === "en"
+          ? "AZ Vision recognises when people arrive together — a couple, a family or a group of friends. Instead of anonymous headcounts you see how many real shopping parties walk in — a sharper read on sales potential and customer behaviour."
+          : "AZ Vision rozpozná, když lidé přicházejí společně — pár, rodinu nebo skupinu přátel. Místo anonymních čísel tak víte, kolik k vám míří skutečných nákupních skupin, a lépe odhadnete potenciál tržeb i chování zákazníků."
+      }
+    </p>
+  </div>
+
+  <div class="advanced-feature-item">
+    <h3 class="advanced-feature-title">
+      {lang === "en" ? "Heatmaps" : "Heatmapy"}
+    </h3>
+    <div class="feature-image-item">
+      <div class="image-container">
+        <img
+          src="/heatmap.jpg"
+          alt={lang === "en"
+            ? "Heatmap overlay showing where customers spend the most time"
+            : "Heatmapa ukazující, kde se zákazníci nejvíce zdržují"}
+          loading="lazy"
+        />
+      </div>
+    </div>
+    <p class="feature-image-caption">
+      {
+        lang === "en"
+          ? "The heatmap reveals where customers spend the most time in your store. Spot your hottest zones and overlooked corners at a glance — then place products, promotions and signage where they actually sell."
+          : "Heatmapa ukazuje, kde se zákazníci v prodejně nejvíce zdržují. Na první pohled odhalíte nejsilnější i přehlížená místa — a podle toho rozmístíte zboží, akce a navigaci tak, aby skutečně prodávaly."
+      }
+    </p>
+  </div>
+</section>

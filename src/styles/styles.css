@@ -722,6 +722,22 @@ footer a:hover {
 }
 
 
+/* Advanced features section */
+.advanced-features .advanced-feature-item {
+  margin-top: 2.5rem;
+  text-align: center;
+}
+.advanced-features .advanced-feature-title {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: rgb(var(--accent-blue-light));
+  margin-bottom: 1.25rem;
+}
+.advanced-features .feature-image-caption {
+  margin-left: auto;
+  margin-right: auto;
+}
+
 /* Feature Images Grid */
 .features-image-grid {
   margin-top: 3rem;
