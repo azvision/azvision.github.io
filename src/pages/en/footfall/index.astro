@@ -1,0 +1,40 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import HeroSection from '../../../components/HeroSection.astro';
+import ProductOverview from '../../../components/ProductOverview.astro';
+import Features from '../../../components/Features.astro';
+import AdvancedFeatures from '../../../components/AdvancedFeatures.astro';
+import ImplementationSteps from '../../../components/ImplementationSteps.astro';
+import ContactSection from '../../../components/ContactSection.astro';
+import References from '../../../components/References.astro';
+---
+
+<Layout
+  title="AZ Vision Footfall | Accurate People Counting for Retail"
+  description="Boost your store's efficiency with AI-powered visitor analytics. We offer precise people counting, a cloud portal, and easy integration. Tailored solutions."
+  keywords="people counting, AI visitor analytics, retail analytics, store, shopping centers, footfall, AZ Vision"
+  canonicalUrl="https://azvision.github.io/en/footfall/"
+  ogImage="https://azvision.github.io/footfall-preview.jpg"
+  lang="en"
+  ogLocale="en_US"
+  activeKey="footfall"
+  hasEn={true}
+  csHref="/footfall/"
+  enHref="/en/footfall/"
+  serviceType="AI Analytics for Retail"
+>
+  <main>
+    <HeroSection lang="en" />
+    <ProductOverview lang="en" />
+    <Features lang="en" />
+    <AdvancedFeatures lang="en" />
+    <ImplementationSteps lang="en" />
+    <References lang="en" />
+    <ContactSection lang="en" />
+  </main>
+
+  <footer>
+    <p>&copy; {new Date().getFullYear()} AZ Vision. All rights reserved.</p>
+    <p>Prague, Czech Republic</p>
+  </footer>
+</Layout>

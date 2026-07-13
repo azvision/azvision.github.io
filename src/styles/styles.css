@@ -191,6 +191,12 @@ nav.navbar a.nav-link {
 nav.navbar a.nav-link:hover, nav.navbar a.nav-link:focus {
   color: #e54b4b !important;
 }
+/* Active product in the global top menu */
+nav.navbar a.nav-link.active {
+  color: rgb(var(--accent-blue-light)) !important;
+  font-weight: 700;
+  box-shadow: inset 0 -2px 0 0 rgb(var(--accent-red));
+}
 /* Remove the small rounded background for active language when inside navbar */
 nav.navbar .language-switcher span[aria-current="true"],
 nav.navbar .language-switcher .active {
@@ -977,6 +983,97 @@ footer a:hover {
   section {
     padding: 1.5rem 1.2rem;
   }
+}
+
+/* ===== PRODUCT HUB (rozcestník) ===== */
+.product-hub-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  max-width: 1000px;
+  margin: 2.5rem auto 0;
+}
+
+@media (min-width: 768px) {
+  .product-hub-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.product-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  background: var(--bg-white-light);
+  border: 1px solid rgba(100, 200, 255, 0.25);
+  border-radius: var(--border-radius-large);
+  padding: 2.5rem 1.8rem;
+  text-decoration: none;
+  color: #fff;
+  box-shadow: var(--shadow-light);
+  transition: all var(--transition-normal);
+  height: 100%;
+}
+
+.product-card:hover,
+.product-card:focus {
+  background: var(--bg-white-medium);
+  border-color: rgba(100, 200, 255, 0.5);
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-medium), var(--shadow-glow);
+  outline: none;
+}
+
+.product-card-icon {
+  width: 72px;
+  height: 72px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: rgba(100, 200, 255, 0.2);
+  border: 1px solid rgba(100, 200, 255, 0.35);
+  color: rgb(var(--accent-blue-light));
+  margin-bottom: 1.3rem;
+  transition: all var(--transition-normal);
+}
+
+.product-card:hover .product-card-icon {
+  background: rgba(100, 200, 255, 0.3);
+  transform: scale(1.05);
+}
+
+.product-card-title {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: rgb(var(--accent-blue-light));
+  margin: 0 0 0.5rem;
+}
+
+.product-card-ext {
+  font-size: 0.85em;
+  opacity: 0.8;
+}
+
+.product-card-tagline {
+  color: rgba(255, 255, 255, 0.92);
+  font-size: 1rem;
+  line-height: 1.6;
+  margin: 0 0 1.5rem;
+  flex-grow: 1;
+}
+
+.product-card-cta {
+  font-weight: 600;
+  color: rgb(var(--accent-blue));
+  margin-top: auto;
+  transition: color var(--transition-fast);
+}
+
+.product-card:hover .product-card-cta,
+.product-card:focus .product-card-cta {
+  color: rgb(var(--accent-red));
 }
 
 /* ===== ANIMATIONS ===== */

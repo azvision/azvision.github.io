@@ -1,0 +1,41 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import HeroSection from '../../components/HeroSection.astro';
+import ProductOverview from '../../components/ProductOverview.astro';
+import Features from '../../components/Features.astro';
+import AdvancedFeatures from '../../components/AdvancedFeatures.astro';
+import ImplementationSteps from '../../components/ImplementationSteps.astro';
+import ContactSection from '../../components/ContactSection.astro';
+import References from '../../components/References.astro';
+---
+
+
+<Layout
+  title="AZ Vision Footfall | Přesné počítání návštěvníků pro retail"
+  description="Zvyšte efektivitu vaší prodejny díky AI analýze návštěvnosti. Nabízíme přesné počítání osob, cloudový portál a snadnou integraci. Řešení na míru."
+  keywords="počítání návštěvníků, AI analýza návštěvnosti, retail analytics, people counting, prodejny, obchodní centra, návštěvnost, AZ Vision"
+  canonicalUrl="https://azvision.github.io/footfall/"
+  ogImage="https://azvision.github.io/footfall-preview.jpg"
+  lang="cs"
+  ogLocale="cs_CZ"
+  activeKey="footfall"
+  hasEn={true}
+  csHref="/footfall/"
+  enHref="/en/footfall/"
+  serviceType="AI Analytics for Retail"
+>
+  <main>
+    <HeroSection />
+    <ProductOverview />
+    <Features />
+    <AdvancedFeatures />
+    <ImplementationSteps />
+    <References />
+    <ContactSection />
+  </main>
+
+  <footer>
+    <p>&copy; {new Date().getFullYear()} AZ Vision. Všechna práva vyhrazena.</p>
+    <p>Praha, Česká republika</p>
+  </footer>
+</Layout>

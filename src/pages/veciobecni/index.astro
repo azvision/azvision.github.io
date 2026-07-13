@@ -1,0 +1,156 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import ContactSection from '../../components/ContactSection.astro';
+
+const EXTERNAL_URL = 'https://veciobecni.cz';
+---
+
+<Layout
+  title="veciobecni.cz | Data z úředních desek obcí na mapě s notifikacemi"
+  description="veciobecni.cz mapuje data z úředních desek obcí — dokumenty o pozemcích a nemovitostech — a upozorní vás na dění ve vaší oblasti. Vytvořte si vlastní komunity a hlídejte i jednání zastupitelstev. Služba je v provozu."
+  keywords="veciobecni, úřední deska, obce, nemovitosti, pozemky, zastupitelstvo, notifikace, komunita, mapa, AZ Vision"
+  canonicalUrl="https://azvision.github.io/veciobecni/"
+  ogImage="https://azvision.github.io/logo_light.png"
+  lang="cs"
+  ogLocale="cs_CZ"
+  activeKey="veciobecni"
+  hasEn={false}
+  serviceType="Public administration monitoring"
+>
+  <main>
+    <section class="hero">
+      <h1>veciobecni.cz</h1>
+      <p class="hero-subtitle">Data z úředních desek obcí přehledně na mapě — dokumenty o pozemcích a nemovitostech na jednom místě. Nakreslete si vlastní oblast a každý týden vám pošleme souhrn dění e‑mailem. Služba už běží — stačí ji vyzkoušet.</p>
+      <div class="features-cta-wrapper">
+        <a href={EXTERNAL_URL} class="hero-cta-btn" target="_blank" rel="noopener noreferrer">Přejít na veciobecni.cz ↗</a>
+      </div>
+    </section>
+
+    <section class="product-overview">
+      <h2>Co veciobecni.cz umí</h2>
+      <div class="overview-grid">
+        <div class="overview-text-content">
+          <p class="overview-text">
+            Úřední desky obcí a městských částí každý den zveřejňují dokumenty o pozemcích a nemovitostech —
+            prodeje, pronájmy, záměry, změny územního plánu. Projít je ručně je ale nereálné. veciobecni.cz je
+            průběžně sleduje, propojí s mapou a upozorní vás, jakmile se něco děje ve vámi zvolené oblasti.
+            Doplňkově hlídá i jednání a zápisy zastupitelstev.
+          </p>
+          <div class="system-desc-lead">Jak vám pomůže:</div>
+          <ul class="system-desc-list">
+            <li>
+              <span class="desc-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="8" y1="13" x2="16" y2="13"/><line x1="8" y1="17" x2="16" y2="17"/></svg>
+              </span>
+              Mapuje data z úředních desek obcí a městských částí — dokumenty o pozemcích a nemovitostech
+            </li>
+            <li>
+              <span class="desc-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="21" x2="21" y2="21"/><line x1="6" y1="21" x2="6" y2="9"/><line x1="18" y1="21" x2="18" y2="9"/><polyline points="4 9 12 3 20 9"/><line x1="10" y1="21" x2="10" y2="13"/><line x1="14" y1="21" x2="14" y2="13"/></svg>
+              </span>
+              Doplňkově sleduje jednání a zápisy zastupitelstev
+            </li>
+            <li>
+              <span class="desc-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              </span>
+              Z textu vytáhne adresu a ukáže přesnou polohu na mapě
+            </li>
+            <li>
+              <span class="desc-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+              </span>
+              Vlastní komunity: nakreslíte si oblast na mapě a dostáváte upozornění na dění v ní
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="weekly-digest">
+        <div class="weekly-digest-icon" aria-hidden="true">
+          <svg xmlns="http://www.w3.org/2000/svg" width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 5L2 7"/></svg>
+        </div>
+        <div class="weekly-digest-text">
+          <span class="weekly-digest-eyebrow">Týdenní souhrn e‑mailem</span>
+          <h3 class="weekly-digest-title">Nic vám neuteče, ani nemusíte nic hlídat</h3>
+          <p>Jednou týdně vám pošleme přehledné shrnutí všeho, co se ve vaší oblasti událo — nové dokumenty z úředních desek, zmínky o pozemcích a nemovitostech i body z jednání zastupitelstev. Důležité věci vám přijdou samy do schránky.</p>
+        </div>
+      </div>
+
+      <div class="features-cta-wrapper" style="margin-top:2.5rem;">
+        <a href={EXTERNAL_URL} class="hero-cta-btn" target="_blank" rel="noopener noreferrer">Vyzkoušet na veciobecni.cz ↗</a>
+      </div>
+    </section>
+
+    <ContactSection heading="Kontakt" />
+  </main>
+
+  <footer>
+    <p>&copy; {new Date().getFullYear()} AZ Vision. Všechna práva vyhrazena.</p>
+    <p>Praha, Česká republika</p>
+  </footer>
+</Layout>
+
+<style>
+  .weekly-digest {
+    display: flex;
+    gap: 1.6rem;
+    align-items: center;
+    max-width: 820px;
+    margin: 3rem auto 0;
+    padding: 2rem 2.2rem;
+    background: var(--bg-accent-medium);
+    border: 1px solid rgba(100, 200, 255, 0.4);
+    border-radius: var(--border-radius-large);
+    box-shadow: var(--shadow-medium), var(--shadow-glow);
+  }
+
+  .weekly-digest-icon {
+    flex: 0 0 auto;
+    width: 72px;
+    height: 72px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: rgba(100, 200, 255, 0.28);
+    border: 1px solid rgba(100, 200, 255, 0.45);
+    color: rgb(var(--accent-blue-light));
+  }
+
+  .weekly-digest-eyebrow {
+    display: inline-block;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: rgb(var(--accent-blue));
+    margin-bottom: 0.4rem;
+  }
+
+  .weekly-digest-title {
+    margin: 0 0 0.6rem;
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: rgb(var(--accent-blue-light));
+    text-align: left;
+    line-height: 1.25;
+  }
+
+  .weekly-digest-text p {
+    margin: 0;
+    color: rgba(255, 255, 255, 0.95);
+    line-height: 1.6;
+  }
+
+  @media (max-width: 600px) {
+    .weekly-digest {
+      flex-direction: column;
+      text-align: center;
+      padding: 1.8rem 1.4rem;
+    }
+    .weekly-digest-title {
+      text-align: center;
+    }
+  }
+</style>

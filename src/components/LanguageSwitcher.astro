@@ -1,6 +1,6 @@
 ---
-interface Props { current?: string; inline?: boolean }
-const { current = 'cs', inline = false } = Astro.props as Props;
+interface Props { current?: string; csHref?: string; enHref?: string; inline?: boolean }
+const { current = 'cs', csHref = '/', enHref = '/en/', inline = false } = Astro.props as Props;
 ---
 
 {inline ? (
@@ -10,13 +10,13 @@ const { current = 'cs', inline = false } = Astro.props as Props;
         <span aria-current="true" style="font-weight:700;" aria-label="English">
           <img src="/flags/gb.svg" alt="English" class="language-flag" />
         </span>
-        <a href="/" aria-label="Čeština" class="ms-2">
+        <a href={csHref} aria-label="Čeština" class="ms-2">
           <img src="/flags/cz.svg" alt="Čeština" class="language-flag" />
         </a>
       </>
     ) : (
       <>
-        <a href="/en/" aria-label="English">
+        <a href={enHref} aria-label="English">
           <img src="/flags/gb.svg" alt="English" class="language-flag" />
         </a>
         <span aria-current="true" style="font-weight:700;" aria-label="Čeština" class="ms-2">
@@ -33,13 +33,13 @@ const { current = 'cs', inline = false } = Astro.props as Props;
           <img src="/flags/gb.svg" alt="English" class="language-flag" />
         </span>
         |
-        <a href="/" aria-label="Čeština">
+        <a href={csHref} aria-label="Čeština">
           <img src="/flags/cz.svg" alt="Čeština" class="language-flag" />
         </a>
       </>
     ) : (
       <>
-        <a href="/en/" aria-label="English">
+        <a href={enHref} aria-label="English">
           <img src="/flags/gb.svg" alt="English" class="language-flag" />
         </a>
         |

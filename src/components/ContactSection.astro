@@ -1,9 +1,10 @@
 ---
-interface Props { lang?: string }
-const { lang = 'cs' } = Astro.props as Props;
+interface Props { lang?: string; heading?: string }
+const { lang = 'cs', heading } = Astro.props as Props;
+const resolvedHeading = heading ?? (lang === 'en' ? 'Contact for AI visitor analytics' : 'Kontakt pro AI řešení návštěvnosti');
 ---
 <section id="contact" class="contact">
-  <h2>{lang === 'en' ? 'Contact for AI visitor analytics' : 'Kontakt pro AI řešení návštěvnosti'}</h2>
+  <h2>{resolvedHeading}</h2>
   
   <div class="company-info">
     {lang === 'en' ? (

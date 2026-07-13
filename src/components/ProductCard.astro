@@ -1,0 +1,21 @@
+---
+interface Props {
+  href: string;
+  title: string;
+  tagline?: string;
+  cta?: string;
+  external?: boolean;
+}
+const { href, title, tagline, cta = 'Zjistit více', external = false } = Astro.props as Props;
+const linkAttrs = external ? { target: '_blank', rel: 'noopener noreferrer' } : {};
+---
+<a class="product-card" href={href} {...linkAttrs}>
+  <div class="product-card-icon" aria-hidden="true">
+    <slot name="icon" />
+  </div>
+  <h3 class="product-card-title">
+    {title}{external && <span class="product-card-ext" aria-hidden="true"> ↗</span>}
+  </h3>
+  {tagline && <p class="product-card-tagline">{tagline}</p>}
+  <span class="product-card-cta">{cta} →</span>
+</a>
