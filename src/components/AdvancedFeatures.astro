@@ -57,4 +57,76 @@ const { lang = "cs" } = Astro.props as Props;
       }
     </p>
   </div>
+
+  <div class="advanced-feature-item">
+    <h3 class="advanced-feature-title">
+      {lang === "en" ? "Wide entrances" : "Široké vchody"}
+    </h3>
+    <div class="feature-image-item">
+      <div class="image-container">
+        <img
+          src="/multi-camera-dedup.png"
+          alt={lang === "en"
+            ? "Two cameras covering one wide entrance, counting each visitor once"
+            : "Dvě kamery pokrývají jeden široký vchod a počítají každého návštěvníka jednou"}
+          loading="lazy"
+        />
+      </div>
+    </div>
+    <p class="feature-image-caption">
+      {
+        lang === "en"
+          ? "One camera not enough for a wide entrance or lobby? Combine several — they talk to each other and reconcile the overlapping view, so every visitor is counted exactly once, never twice. Accurate footfall even across the widest doors."
+          : "Nestačí jedna kamera na široký vchod nebo halu? Zapojte jich víc — vzájemně si povídají a vyřeší překrývající se záběr, takže se každý návštěvník započítá přesně jednou, nikdy dvakrát. Přesné počítání i u nejširších dveří."
+      }
+    </p>
+  </div>
+
+  <div class="advanced-feature-item">
+    <h3 class="advanced-feature-title">
+      {lang === "en" ? "HD recording" : "HD nahrávání"}
+    </h3>
+    <div class="feature-image-item">
+      <div class="image-container">
+        <img
+          src="/hd-video.jpg"
+          alt={lang === "en"
+            ? "Full 1080p HD footage recorded straight from the camera"
+            : "Plné 1080p HD video nahrané přímo z kamery"}
+          loading="lazy"
+        />
+      </div>
+    </div>
+    <p class="feature-image-caption">
+      {
+        lang === "en"
+          ? "Need security‑grade footage, not just counts? Switch any camera to full 1080p HD recording straight from its hardware encoder — sharp, identifiable video with no loss of counting accuracy and no dropped frames. Clips upload automatically, ready to review any moment."
+          : "Potřebujete i kvalitní bezpečnostní záznam, ne jen čísla? Přepněte kameru na plné 1080p HD nahrávání přímo z hardwarového enkodéru — ostré, čitelné video bez ztráty přesnosti počítání a bez zahazování snímků. Klipy se nahrávají automaticky a kdykoli se k nim vrátíte."
+      }
+    </p>
+  </div>
+
+  <div class="advanced-feature-item">
+    <h3 class="advanced-feature-title">
+      {lang === "en" ? "Camera monitoring" : "Hlídání kamery"}
+    </h3>
+    <div class="feature-image-item">
+      <div class="image-container">
+        <img
+          src="/camera-orientation.png"
+          alt={lang === "en"
+            ? "AZ Vision detects when a camera has been moved or tilted and alerts you"
+            : "AZ Vision pozná, když se kamera pohne nebo nakloní, a upozorní vás"}
+          loading="lazy"
+        />
+      </div>
+    </div>
+    <p class="feature-image-caption">
+      {
+        lang === "en"
+          ? "A knocked, rotated or sagging camera quietly ruins your data. AZ Vision continuously senses each camera's orientation and flags it the moment it moves — so you fix it before you lose a single day of accurate counts."
+          : "Nakloněná, pootočená nebo povolená kamera potichu zkazí data. AZ Vision průběžně sleduje orientaci každé kamery a upozorní ve chvíli, kdy se pohne — opravíte to dřív, než přijdete o jediný den přesných počtů."
+      }
+    </p>
+  </div>
 </section>
