@@ -12,6 +12,19 @@ const { lang = "cs" } = Astro.props as Props;
 
   <div class="advanced-feature-item">
     <h3 class="advanced-feature-title">
+      {lang === "en" ? "Conversion rate" : "Konverzní poměr"}
+    </h3>
+    <p class="feature-image-caption">
+      {
+        lang === "en"
+          ? "How many of your visitors actually buy? Link footfall data with your POS and you get the store's conversion rate — day by day, hour by hour. You will see the hours when people walk in but don't spend, measure what a promotion really did, and judge the store and its staffing on data instead of guesswork."
+          : "Kolik z návštěvníků u vás skutečně nakoupí? Propojte počty návštěvníků s daty z pokladny a získáte konverzní poměr prodejny — den po dni, hodinu po hodině. Uvidíte hodiny, kdy k vám lidé chodí a neutrácí, změříte skutečný dopad promo akce a efektivitu prodejny i personálu posoudíte podle dat, ne podle odhadu."
+      }
+    </p>
+  </div>
+
+  <div class="advanced-feature-item">
+    <h3 class="advanced-feature-title">
       {lang === "en" ? "Group detection" : "Detekce skupin"}
     </h3>
     <div class="feature-image-item">
