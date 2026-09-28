@@ -1,0 +1,81 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import ContactSection from '../../components/ContactSection.astro';
+
+const EXTERNAL_URL = 'https://manarozeniny.cz/?utm_source=azvision&utm_medium=referral';
+---
+
+<Layout
+  title="manarozeniny.cz | Narozeninová stránka na vlastní adrese"
+  description="manarozeniny.cz připraví k oslavě vlastní webovou stránku na adrese jako adelka7.manarozeniny.cz – pozvánka s mapou, potvrzení účasti hostů, seznam dárků bez duplicit a po oslavě fotky. Náhled zdarma."
+  keywords="manarozeniny, narozeninová stránka, online pozvánka, pozvánka na narozeniny, potvrzení účasti, seznam dárků, dětská oslava, kulaté narozeniny, AZ Vision"
+  canonicalUrl="https://www.azvision.cz/manarozeniny/"
+  ogImage="https://www.azvision.cz/logo_light.png"
+  lang="cs"
+  ogLocale="cs_CZ"
+  activeKey="manarozeniny"
+  hasEn={false}
+  serviceType="Online birthday invitations"
+>
+  <main>
+    <section class="hero">
+      <h1>manarozeniny.cz</h1>
+      <p class="hero-subtitle">Každá oslava má svou vlastní adresu – třeba adelka7.manarozeniny.cz. Z krátkého průvodce připravíme hezkou stránku k narozeninám, kde hosté najdou pozvánku, potvrdí účast a vyberou si dárek. Náhled je zdarma.</p>
+      <div class="features-cta-wrapper">
+        <a href={EXTERNAL_URL} class="hero-cta-btn" target="_blank" rel="noopener noreferrer">Přejít na manarozeniny.cz ↗</a>
+      </div>
+    </section>
+
+    <section class="product-overview">
+      <h2>Co manarozeniny.cz umí</h2>
+      <div class="overview-grid">
+        <div class="overview-text-content">
+          <p class="overview-text">
+            Pozvánky na oslavu se dnes rozesílají zprávou – a pak se v desítkách odpovědí hledá, kdo přijde,
+            kdo nemůže lepek a kdo už kupuje stejnou stavebnici. manarozeniny.cz dá všechno na jedno místo:
+            jednu adresu, kterou pošlete hostům, a přehled, který máte jako pořadatel po ruce. Funguje pro dětské
+            oslavy i kulaté narozeniny dospělých.
+          </p>
+          <div class="system-desc-lead">Jak vám pomůže:</div>
+          <ul class="system-desc-list">
+            <li>
+              <span class="desc-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+              </span>
+              Vlastní adresa oslavy (jmeno.manarozeniny.cz) s pozvánkou, mapou a odpočtem do začátku
+            </li>
+            <li>
+              <span class="desc-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+              </span>
+              Potvrzení účasti hostů včetně počtu lidí a dietních omezení – bez obvolávání
+            </li>
+            <li>
+              <span class="desc-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 12 20 22 4 22 4 12"/><rect x="2" y="7" width="20" height="5"/><line x1="12" y1="22" x2="12" y2="7"/><path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"/><path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"/></svg>
+              </span>
+              Seznam dárků, kde si hosté dárek zamluví – nic se nekoupí dvakrát
+            </li>
+            <li>
+              <span class="desc-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+              </span>
+              Stránka jde zamknout heslem a nezobrazuje se ve vyhledávačích; po oslavě na ni nahrajete fotky
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="features-cta-wrapper" style="margin-top:2.5rem;">
+        <a href={EXTERNAL_URL} class="hero-cta-btn" target="_blank" rel="noopener noreferrer">Vyzkoušet na manarozeniny.cz ↗</a>
+      </div>
+    </section>
+
+    <ContactSection heading="Kontakt" />
+  </main>
+
+  <footer>
+    <p>&copy; {new Date().getFullYear()} AZ Vision. Všechna práva vyhrazena.</p>
+    <p>Praha, Česká republika</p>
+  </footer>
+</Layout>
