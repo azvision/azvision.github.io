@@ -1,5 +1,6 @@
 ---
 import { Image } from 'astro:assets';
+import logo from '../../assets/logo_light.png';
 import Layout from '../../layouts/Layout.astro';
 import ProductCard from '../../components/ProductCard.astro';
 import ContactSection from '../../components/ContactSection.astro';
@@ -20,7 +21,7 @@ import ContactSection from '../../components/ContactSection.astro';
 >
   <main>
     <section class="hero">
-      <Image src="/logo_light.png" alt="AZ Vision logo" class="logo-img" width={234} height={180} />
+      <Image src={logo} alt="AZ Vision logo" class="logo-img" width={234} height={180} densities={[1, 2]} format="webp" loading="eager" fetchpriority="high" />
       <h1>Smart AI solutions by AZ Vision</h1>
       <p class="hero-subtitle">We are Czech developers of neural networks and computer vision. We build practical products for retail, public administration and family celebrations — pick the one you need.</p>
     </section>

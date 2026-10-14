@@ -1,11 +1,12 @@
 ---
 import { Image } from 'astro:assets';
+import logo from '../assets/logo_light.png';
 interface Props { lang?: string }
 const { lang = 'cs' } = Astro.props as Props;
 ---
 
 <section class="hero">
-  <Image src="/logo_light.png" alt="AZ Vision logo" class="logo-img" width={234} height={180} />
+  <Image src={logo} alt="AZ Vision logo" class="logo-img" width={234} height={180} densities={[1, 2]} format="webp" loading="eager" fetchpriority="high" />
 
   <h1>{lang === 'en' ? 'Do you know how many people your advertising actually brought in?' : 'Víte, kolik lidí vaše reklama přivedla?'}</h1>
 
